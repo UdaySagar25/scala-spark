@@ -1,0 +1,55 @@
+### Namaste Spark
+What is going to be the flow of the topics ?
+---- data needs to be built inhouse -- not generated
+- what is spark?
+- getting started with spark
+- creating spark session
+- brief about spark architecture
+- RDD ( example of RDD operations )
+- Dataframes  x
+- Spark data types (with example codes) x
+- DataFrame row manipulations -- x
+- DataSet column manipulations -- x
+- Spark Dataframes and Python Pandas
+- Key-Value Pairs -- ???
+- Actions and Transformers -- x (with examples) about dataframes
+- GroupByKey() and ReduceByKey()
+- actions
+- Data Partitioning -- ??? 
+- repartition() v/s coalesce() -- x 
+- Datasets ( example of RDD operations )
+- RDD vs DataFrames vs Datasets
+- Schema Definitions
+- DataFrame column manipulations
+- Row operations
+- Expressions
+- Math operations
+- handle csv format data(from basic to advance)
+- handle xml format data(from basics to advance)
+- handle json files data(from basics to advance)
+- handle text files
+- string operations (with code examples)
+- Regular Expressions
+- Handling Dates and Timestamps
+- Handling null values
+- Aggregate functions
+- Grouping Sets
+- Window functions
+- Arrays
+- Structs
+- Joins
+- Cross Joins and Self Joins ( when to use? and when to not? )
+- Challenges of Spark Joins
+- Cache() vs Persist()
+- UDFs
+- Accumulations
+- Higher order functions ( explode(), map(), reduce() )
+- Handling Avro Format Data
+- Similarities and Differences between Avro and JSON
+- error handling()
+- PySpark
+- SparkSQL
+- Spark MLlib
+- Spark Graph Analytics
+- DAGS
+
