@@ -153,5 +153,4 @@ We now know the salient features of DataFrames, including
 - [Create DataFrames ](https://learn.microsoft.com/en-us/azure/databricks/getting-started/dataframes#create-dataframe)
 - [DataFrames](https://spark.apache.org/docs/latest/sql-programming-guide.html)
 - [Create RDDs](https://stackoverflow.com/questions/32531224/how-to-convert-dataframe-to-rdd-in-scala)
-- [Handling JSON Files to create DataFrames](https://kontext.tech/article/532/scala-parse-json-string-as-spark-dataframe)
-- [YouTube Tutorial for creating RDDs and DataFrames](https://www.youtube.com/watch?v=2qZ5ryhJlUY)
+- [Handling JSON Files in Spark]([https://kontext.tech/article/532/scala-parse-json-string-as-spark-dataframe](https://spark.apache.org/docs/3.5.4/sql-data-sources-json.html#:~:text=the%20Spark%20repo.-,Spark%20SQL%20can%20automatically%20infer%20the%20schema%20of%20a%20JSON,not%20a%20typical%20JSON%20file.))
