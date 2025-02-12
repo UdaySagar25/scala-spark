@@ -91,7 +91,7 @@ newDf.show()
 +----+--------+-----+
 ```
 ### How to get the distinct rows of the dataframe?
-We can get the distinct rows from teh dataframe using the below method
+We can get the distinct rows from the dataframe using the below method
 ```scala
 moreRows.distinct().show()
 ```
