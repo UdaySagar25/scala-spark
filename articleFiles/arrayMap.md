@@ -28,12 +28,12 @@ df.show()
 |   5|  Sohaib|[86, 74, 70]|
 +----+--------+------------+
 ```
+
 ### How to access elements of the array from a dataframe?
 ```scala
 val arrayElements=df.withColumn("Marks",$"Marks"(1))
 arrayElements.show()
 ```
-
 **Output**
 ```text
 +----+--------+-----+
@@ -174,9 +174,12 @@ mapDf.withColumn("Keys", map_keys($"Details"))
 +---+----------------------------------+-------------+-------------+
 ```
 
-
 ### Summary
+We now know how to store multiple elements under a single entity. This is done by Array Type. How to handle data which is of Array Type. We also got to know what dataframe array operations can be done and how do they help us.
 
+### Related Articles.
+- [Spark dataframes](dataframe.md)
+- [Spark data types](datatypes.md)
 
 ### References
 - [Spark Arrays](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.functions.array.html)
