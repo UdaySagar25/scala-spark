@@ -3,5 +3,6 @@
 
 
 
-Change the references links in all the pages.
+### New article title
+https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.types.StructType.html
 
