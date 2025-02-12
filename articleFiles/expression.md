@@ -1,5 +1,5 @@
 ## Expressions 
-
+created on: 12-02-2025
 ### What are expressions?
 In Spark dataframes, expressions refer to the operations that can be applied on the dataframe columns, through which we get new set of values.
 Expression are used in various scenarios. They are used in select, filter,agg etc.
