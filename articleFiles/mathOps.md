@@ -1,5 +1,7 @@
 ## Math Operations 
+
 created on: 12-2-2025
+
 In this article, we are going to see different math operations and its application on a dataframes.
 These math operations generally include methods like, addition, subtraction, multiplication, division, average, floor and ceil values and many more.
 Let us now look into each of these mathematical operations and how they are applied on dataframes.
