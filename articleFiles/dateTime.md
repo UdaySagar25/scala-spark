@@ -64,6 +64,8 @@ moreComponents.show()
 ```
 
 ### How to format dates?
+Formatting date is very essentail as it will be helpful to users in understanding the data who are from different time zones and follow different date format.
+We use the method `date_format()` to change the date format.
 ```scala
 val dfFormatted = dfWithDate.withColumn("FormattedDate", date_format($"EnrollmentDate", "yyyy-MM-dd")) // ISO 8601 format
       .withColumn("AnotherFormat", date_format($"EnrollmentDate", "MM/dd/yyyy")) // US format
@@ -85,7 +87,7 @@ dfFormatted.show()
 ```
 
 ### How to get the current timestamp ?
-To display the current timestamp, we can use the method `current_timestamp()`
+To display the current timestamp, we can use the method `current_timestamp()`.
 ```scala
 val dfWithTimestamp = dfWithDate.withColumn("RegistrationTime", current_timestamp())
 dfWithTimestamp.show()
@@ -103,6 +105,7 @@ dfWithTimestamp.show()
 +----+--------+-----+--------------+--------------------+
 ```
 ### How to get timestamp of a different time zone ?
+To get the timestamp of a different time zone, we have to use a combination of methods. `from_utc_timestamp()` is used inside `.withColumn()` to get the different time stamp.
 ```scala
 val dfWithTimeZone = dfWithTimestamp.withColumn("ISTRegistrationTime", from_utc_timestamp($"RegistrationTime", "Asia/Kolkata"))
 dfWithTimeZone.show()
