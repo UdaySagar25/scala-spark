@@ -4,7 +4,7 @@ Struct data types is a complex data type in apache spark. It is used to store gr
 Typically, Struct Type is a collection of Struct Field elements, which has 
 - A name
 - A datatype
-- A nullable flag,
+- A nullable flag
 
 ### How to create a dataframe using StructType and StructField
 ```scala
@@ -33,15 +33,15 @@ val studentSchema=StructType(Array(
 ```
 **Output**
 ```text
-+---+-------+-----+--------------------+
-| ID|   Name|Marks|             Hobbies|
-+---+-------+-----+--------------------+
-|  1|   Ajay|   55|   {Singing, Sudoku}|
-|  2|Bhargav|   63| {Dancing, Painting}|
-|  3|Chaitra|   60| {Chess, Long Walks}|
++---+-------+-----+-----------------------+
+| ID|   Name|Marks|                Hobbies|
++---+-------+-----+-----------------------+
+|  1|   Ajay|   55|      {Singing, Sudoku}|
+|  2|Bhargav|   63|    {Dancing, Painting}|
+|  3|Chaitra|   60|    {Chess, Long Walks}|
 |  4|  Kamal|   75|{Reading Books, Cooking|
-|  5| Sohaib|   70|  {Singing, Cooking}|
-+---+-------+-----+--------------------+
+|  5| Sohaib|   70|     {Singing, Cooking}|
++---+-------+-----+-----------------------+
 ```
 
 ### How to access the nested fields of the dataframe?
@@ -95,25 +95,6 @@ df.selectExpr("Name","Hobbies.hobby1 as hobby1","Hobbies.hobby2 as hobby2").show
 +-------+-------------+----------+
 ```
 
-### How to update the fields of Struct Type
-```scala
-val updatedDF = df.withColumn("NewColumn", struct(col("Name"), col("Marks")))
-updatedDF.show()
-```
-
-**Output**
-```text
-+---+-------+-----+--------------------+-------------+
-| ID|   Name|Marks|             Hobbies|    NewColumn|
-+---+-------+-----+--------------------+-------------+
-|  1|   Ajay|   55|   {Singing, Sudoku}|   {Ajay, 55}|
-|  2|Bhargav|   63| {Dancing, Painting}|{Bhargav, 63}|
-|  3|Chaitra|   60| {Chess, Long Walks}|{Chaitra, 60}|
-|  4|  Kamal|   75|{Reading Books, C...|  {Kamal, 75}|
-|  5| Sohaib|   70|  {Singing, Cooking}| {Sohaib, 70}|
-+---+-------+-----+--------------------+-------------+
-```
-
 ### How to filter dataframe rows based on nested field values?
 ```scala
 df.filter(col("Hobbies.hobby1") === "Singing").show()
@@ -132,11 +113,15 @@ df.filter(col("Hobbies.hobby1") === "Singing").show()
 Struct Data Type in Apache Spark is a complex data type used to store multiple columns as a single entity. 
 It consists of StructField elements, each having a name, data type, and nullable flag.
 `StructType()` method is used to define the schema with nested fields.
-`Row()` objects stores the data
-We have looked at 
+`Row()` objects stores the data.
+We have looked at:
 - create a dataframe of struct type
 - How to access rows based on nested fields
 - How to rename the nested column names
 - How to flatten the dataframe column values
 - How to filter rows based on nested structType values
+
+### References
+- [Struct Type](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.types.StructType.html)
+- [Struct](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.functions.struct.html)
 
