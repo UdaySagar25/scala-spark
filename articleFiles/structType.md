@@ -29,19 +29,19 @@ val studentSchema=StructType(Array(
     val df = spark.createDataFrame(
       spark.sparkContext.parallelize(sampledata), studentSchema)
 
-    df.show()
+    df.show(truncate=false)
 ```
 **Output**
 ```text
-+---+-------+-----+-----------------------+
-| ID|   Name|Marks|                Hobbies|
-+---+-------+-----+-----------------------+
-|  1|   Ajay|   55|      {Singing, Sudoku}|
-|  2|Bhargav|   63|    {Dancing, Painting}|
-|  3|Chaitra|   60|    {Chess, Long Walks}|
-|  4|  Kamal|   75|{Reading Books, Cooking|
-|  5| Sohaib|   70|     {Singing, Cooking}|
-+---+-------+-----+-----------------------+
++---+-------+-----+------------------------+
+| ID|   Name|Marks|                 Hobbies|
++---+-------+-----+------------------------+
+|  1|   Ajay|   55|       {Singing, Sudoku}|
+|  2|Bhargav|   63|     {Dancing, Painting}|
+|  3|Chaitra|   60|     {Chess, Long Walks}|
+|  4|  Kamal|   75|{Reading Books, Cooking}|
+|  5| Sohaib|   70|      {Singing, Cooking}|
++---+-------+-----+------------------------+
 ```
 
 ### How to access the nested fields of the dataframe?
@@ -97,7 +97,7 @@ df.selectExpr("Name","Hobbies.hobby1 as hobby1","Hobbies.hobby2 as hobby2").show
 
 ### How to filter dataframe rows based on nested field values?
 ```scala
-df.filter(col("Hobbies.hobby1") === "Singing").show()
+df.filter(col("Hobbies.hobby1") === "Singing").show(truncate=false)
 ```
 **Output**
 ```text
