@@ -114,8 +114,9 @@ Struct Data Type in Apache Spark is a complex data type used to store multiple c
 It consists of StructField elements, each having a name, data type, and nullable flag.
 `StructType()` method is used to define the schema with nested fields.
 `Row()` objects stores the data.
+
 We have looked at:
-- create a dataframe of struct type
+- how to create a dataframe of struct type
 - How to access rows based on nested fields
 - How to rename the nested column names
 - How to flatten the dataframe column values
