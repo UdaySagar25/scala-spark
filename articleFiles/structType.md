@@ -116,7 +116,7 @@ It consists of StructField elements, each having a name, data type, and nullable
 `Row()` objects stores the data.
 
 We have looked at:
-- how to create a dataframe of struct type
+- How to create a dataframe of struct type
 - How to access rows based on nested fields
 - How to rename the nested column names
 - How to flatten the dataframe column values
