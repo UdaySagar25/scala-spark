@@ -1,5 +1,7 @@
 ## Select() v/s SelectExpr()
 
+created on: 12-2-2025
+
 Both `select()` and `selectExpr()` are used to display specific columns of the spark dataframe. 
 But there are a couple of differences between them. In this article, let us discuss what are the differences.
 
