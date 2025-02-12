@@ -178,7 +178,7 @@ mapDf.withColumn("Keys", map_keys($"Details"))
 We now know how to store multiple elements under a single entity. This is done by Array Type. How to handle data which is of Array Type. We also got to know what dataframe array operations can be done and how do they help us.
 
 ### Related Articles.
-- [Spark dataframes](dataframe.md)
+- [Understanding dataframes](dataframe.md)
 - [Spark data types](datatypes.md)
 
 ### References
