@@ -58,7 +58,7 @@ root
 
 ### Numeric Type
 
-##### 1.How to define Byte type?
+##### How to define Byte type?
 Byte types represents 1-byte signed integer numbers. The range of numbers is from -128 to 127.
 Here we use `.toByte()` to convert the numeric values to ByteType
 ```scala
@@ -78,7 +78,7 @@ val df = spark.createDataFrame(spark.sparkContext.parallelize(data), schema)
 +----------+
 ```
 
-#### 2.How to define ShortType?
+#### How to define ShortType?
 The range of numbers from -32768 to 32767 are categorized as ShortType. These numbers are 2-bit signed integers.
 Here we use `.toShort()` to define what type of data is to be stored in the dataframe.
 In the above created dataframe, 
@@ -89,7 +89,7 @@ In the above created dataframe,
 ```
 are explicitly defined to be stored as ShortType 
 
-#### 3. How to define LongType?
+#### How to define LongType?
 Long type numbers are 8-byte signed integers, and the numbers range from -9223372036854775808 to 9223372036854775807.
 Long type number are suffixed with `L` or `.toLong`
 In the above dataframe, we have used `L` to define the long type variables
@@ -101,7 +101,7 @@ In the above dataframe, we have used `L` to define the long type variables
 50L
 ```
 
-#### 4. How to define FloatType?
+#### How to define FloatType?
 Float type represents 4-byte floating point numbers
 Floating numbers are suffixed with `F` or `.toFloat`.
 In the above dataframe, we have used `F` to define the Floating type variables
@@ -113,7 +113,7 @@ In the above dataframe, we have used `F` to define the Floating type variables
 70.8F
 ```
 
-#### 5. How to define DoubleType?
+#### How to define DoubleType?
 Double type variables represents 8-byte floating point numbers.
 Numbers are suffixed with either `.toDouble` or nothing.
 In the above dataframe, The column **Double Marks** represents the double values
@@ -126,7 +126,7 @@ In the above dataframe, The column **Double Marks** represents the double values
 90.6
 ```
 
-#### 6. How to define StringType?
+#### How to define StringType?
 String type data is a combination of character type data, put together. It is usually defined with `"String.."`. 
 If we want to explicitly define a character as string, we use the method `.toString`
 In the above dataframe, `.toString` method has been used to define the section as String Type.
@@ -138,7 +138,7 @@ In the above dataframe, `.toString` method has been used to define the section a
 'E'.toString
 ```
 
-#### 7. How to define BooleanType?
+#### How to define BooleanType?
 Boolean variables take values as either **True** or **False**
 In the above DataFrame, the column IsActive represents Boolean values.
 ```scala
@@ -148,7 +148,7 @@ true
 false
 true
 ```
-#### 8. How to define ArrayType?
+#### How to define ArrayType?
 Array type variables represent a collection (or list) of elements of the same data type. 
 In Spark, ArrayType is commonly used to store lists or multiple values in a single column.
 
@@ -161,7 +161,7 @@ Seq("Reading Books", "Cooking")
 Seq("Singing", "Cooking")
 ```
 
-#### 9. How to define DateType?
+#### How to define DateType?
 Date type variables represent date values in the format yyyy-MM-dd.
 These values can be used for date-based operations.
 In the above DataFrame, the column DOB initially contains String values and is later converted to DateType using to_date().
@@ -184,6 +184,10 @@ What we have covered ?
 - StringType
 - BooleanType
 - ComplexType ( Arrays )
+
+### Related Articles
+- [Understanding Dataframes](dataframe.md)
+- [Dataframe Column Operations](DFColumn.md)
 
 ## References:
 - [Spark Data Types](https://spark.apache.org/docs/3.5.3/sql-ref-datatypes.html)
