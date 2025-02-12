@@ -43,7 +43,7 @@ dfWithComponents.show()
 ```
 
 ### How to extract the details about day of the year, week of the year and which quarter of the year?
-Extracting this kind of information is quite similar to extracting the details like extracting the yaer, month, and day.
+Extracting this kind of information is quite similar to extracting the details like extracting the year, month, and day.
 ```scala
 val moreComponents=dfWithDate.withColumn("DayOfYear", dayofyear($"EnrollmentDate"))
       .withColumn("WeekOfYear", weekofyear($"EnrollmentDate"))
@@ -130,7 +130,7 @@ We have covered the topics,
 - Extract the year, month and day from the dataframe
 - Extract more information about the datetime column of the dataframe
 - Formatting the Dates column
-- How to ge the current time stamps
+- How to get the current time stamps
 
 ### References
 - [Dataframe date format](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.functions.date_format.html)
