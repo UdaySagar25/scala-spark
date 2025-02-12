@@ -78,7 +78,7 @@ val df = spark.createDataFrame(spark.sparkContext.parallelize(data), schema)
 +----------+
 ```
 
-#### How to define ShortType?
+#### How to define ShortType data?
 The range of numbers from -32768 to 32767 are categorized as ShortType. These numbers are 2-bit signed integers.
 Here we use `.toShort()` to define what type of data is to be stored in the dataframe.
 In the above created dataframe, 
@@ -89,7 +89,7 @@ In the above created dataframe,
 ```
 are explicitly defined to be stored as ShortType 
 
-#### How to define LongType?
+#### How to define LongType data?
 Long type numbers are 8-byte signed integers, and the numbers range from -9223372036854775808 to 9223372036854775807.
 Long type number are suffixed with `L` or `.toLong`
 In the above dataframe, we have used `L` to define the long type variables
@@ -101,7 +101,7 @@ In the above dataframe, we have used `L` to define the long type variables
 50L
 ```
 
-#### How to define FloatType?
+#### How to define FloatType data?
 Float type represents 4-byte floating point numbers
 Floating numbers are suffixed with `F` or `.toFloat`.
 In the above dataframe, we have used `F` to define the Floating type variables
@@ -113,7 +113,7 @@ In the above dataframe, we have used `F` to define the Floating type variables
 70.8F
 ```
 
-#### How to define DoubleType?
+#### How to define DoubleType data?
 Double type variables represents 8-byte floating point numbers.
 Numbers are suffixed with either `.toDouble` or nothing.
 In the above dataframe, The column **Double Marks** represents the double values
@@ -126,7 +126,7 @@ In the above dataframe, The column **Double Marks** represents the double values
 90.6
 ```
 
-#### How to define StringType?
+#### How to define StringType data?
 String type data is a combination of character type data, put together. It is usually defined with `"String.."`. 
 If we want to explicitly define a character as string, we use the method `.toString`
 In the above dataframe, `.toString` method has been used to define the section as String Type.
@@ -138,7 +138,7 @@ In the above dataframe, `.toString` method has been used to define the section a
 'E'.toString
 ```
 
-#### How to define BooleanType?
+#### How to define BooleanType data?
 Boolean variables take values as either **True** or **False**
 In the above DataFrame, the column IsActive represents Boolean values.
 ```scala
@@ -148,7 +148,7 @@ true
 false
 true
 ```
-#### How to define ArrayType?
+#### How to define ArrayType data?
 Array type variables represent a collection (or list) of elements of the same data type. 
 In Spark, ArrayType is commonly used to store lists or multiple values in a single column.
 
@@ -161,7 +161,7 @@ Seq("Reading Books", "Cooking")
 Seq("Singing", "Cooking")
 ```
 
-#### How to define DateType?
+#### How to define DateType data?
 Date type variables represent date values in the format yyyy-MM-dd.
 These values can be used for date-based operations.
 In the above DataFrame, the column DOB initially contains String values and is later converted to DateType using to_date().
@@ -172,6 +172,7 @@ In the above DataFrame, the column DOB initially contains String values and is l
 "2010-08-25"
 "2009-04-14"
 ```
+
 ### Summary
 Apache Spark provides flexibility in handling various data types, categorized into Numeric Types, String Types, Boolean Type, DateTime Type, and Complex Types.
 We have seen how to use these datatypes in the dataframes.
@@ -191,6 +192,5 @@ What we have covered ?
 
 ## References:
 - [Spark Data Types](https://spark.apache.org/docs/3.5.3/sql-ref-datatypes.html)
-- [Working with Dates and Time in Spark](https://www.mungingdata.com/apache-spark/dates-times/)
-- [DateTime Columns in Spark](https://www.sparkcodehub.com/spark-dataframe-datetime)
-- [How to Work with Spark Array Type Columns?](https://www.projectpro.io/recipes/explain-working-with-array-type-column-on-spark-dataframe#:~:text=Spark%20ArrayType%20is%20a%20collection,the%20ArrayType%20scala%20case%20class)
+- [Working with Dates and Time in Spark](https://www.databricks.com/blog/2020/07/22/a-comprehensive-look-at-dates-and-timestamps-in-apache-spark-3-0.html)
+- [How to Work with Spark Array Type](https://www.projectpro.io/recipes/explain-working-with-array-type-column-on-spark-dataframe#:~:text=Spark%20ArrayType%20is%20a%20collection,the%20ArrayType%20scala%20case%20class)
