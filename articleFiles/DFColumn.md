@@ -1,5 +1,10 @@
-## DataFrame Column Manipulations
-Let us create a new data frame. On this, we will demonstrate the column manipulation operations
+## Dataframe Column Manipulations
+
+Dataframe column manipulations on spark dataframes, are operations that are done on dataframe columns which help in cleaning the data, feature engineering and transforming the data for better analysis.
+
+Let us now look into what are the column operations that can be done on a spark dataframe.
+Firstly, let's start by creating a dataframe. To know more about dataframe creation, [Refer this link](dataframe.md)
+
 ```scala
 import spark.implicits._
 val df: DataFrame=Seq(
@@ -25,7 +30,8 @@ df.show()
 |   5|  Sohaib|   70|
 +----+--------+-----+
 ```
-### 1. How to add new Columns to the dataframe ?
+
+### 1. How to add new Columns to the dataframe?
 `.withColumn()` method is used to add a new column based on the existing column
 ```scala
 // Adding a new column to the created dataframe
@@ -45,7 +51,7 @@ add_column.show()
 +----+--------+-----+-------------+
 ```
 
-### 2. How to rename an existing column name ?
+### 2. How to rename an existing column name?
 `.withColumnRenamed()` method is used to rename the column names
 ```scala
 // Renaming an existing column
@@ -64,7 +70,8 @@ rename_column.show()
 |          5|  Sohaib|   70|
 +-----------+--------+-----+
 ```
-### 3. How to drop a column from the dataframe ?
+
+### 3. How to drop a column from the dataframe?
 `.drop()` is used to drop the specific columns from the dataframe
 ```scala
 // Dropping an existing column
@@ -102,7 +109,8 @@ select_columns.show()
 |  Sohaib|   70|
 +--------+-----+
 ```
-### 5. How to Filter Rows based on column values ?
+
+### 5. How to Filter Rows based on column values?
 `filter()` method is used to filter the rows, based on the column values
 ```scala
 // Filtering Based on Column Values
@@ -120,7 +128,8 @@ filter_column.show()
 |   5|  Sohaib|   70|           75|
 +----+--------+-----+-------------+
 ```
-### 6. How to create a column with conditional values
+
+### 6. How to create a column with conditional values?
 `.when()` and `.otherwise()` methods are used to create columns whose values are based on the given conditions
 ```scala
 // Creating columns with conditional values
@@ -149,6 +158,12 @@ What have we covered?
 - How to filter rows based on the column values
 - Creating a new column by applying conditions on existing columns
 
+### Related Articles
+- [Working with dataframes](dataframe.md)
+
+### References
+- [Getting Started with dataframes](https://www.databricks.com/spark/getting-started-with-apache-spark/dataframes)
+- [Spark Column Operations](https://spark.apache.org/docs/3.5.1/api/java/org/apache/spark/sql/Column.html)
 
 
 
