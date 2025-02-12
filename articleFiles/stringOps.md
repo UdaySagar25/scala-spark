@@ -1,5 +1,7 @@
   ## String Operations
 
+created on: 12-2-2025
+
 Let us now dive into understanding string operations that can be done on a Spark Dataframe.
 String operations on Dataframes are categorized into 3 types
 - Basic String functions
