@@ -1,7 +1,7 @@
 ## Arrays and Map Types
 
 ### What are arrays and map types?
-Arrays are a collection of elements within a single row. They are useful for storing multiple values corresponding to a single entity
+Arrays are a collection of elements within a single row. They are useful for storing multiple values corresponding to a single entity.
 Maps are a data type which store information in Key-Value pair format. They are similar to dictionaries and hash maps, which are widely used in other languages.
 
 Let us start with creating a Dataframe of Array type
@@ -50,7 +50,7 @@ arrayElements.show()
 ### How to check the length of the array in a dataframe?
 To get the size/length of the array, `size()` method is used
 ```scala
-df.withColumn("Marks",size($"Marks")).show()
+df.withColumn("Marks Length",size($"Marks")).show()
 ```
 **Output**
 ```text
@@ -175,7 +175,9 @@ mapDf.withColumn("Keys", map_keys($"Details"))
 ```
 
 ### Summary
-We now know how to store multiple elements under a single entity. This is done by Array Type. How to handle data which is of Array Type. We also got to know what dataframe array operations can be done and how do they help us.
+- We now know how to store multiple elements under a single entity.
+- This is done by Array Type. How to handle data which is of Array Type.
+- We also got to know what dataframe array operations can be done and how do they help us.
 
 ### Related Articles.
 - [Understanding dataframes](dataframe.md)
@@ -183,7 +185,7 @@ We now know how to store multiple elements under a single entity. This is done b
 
 ### References
 - [Spark Arrays](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.functions.array.html)
-- [Array Opetations](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.functions.array_contains.html)
+- [Array Operations](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.functions.array_contains.html)
 - [Dataframe Maps](https://stackoverflow.com/questions/67083543/pyspark-sql-dataframe-map-with-multiple-data-types)
 
 
