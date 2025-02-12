@@ -159,7 +159,7 @@ What have we covered?
 - Creating a new column by applying conditions on existing columns
 
 ### Related Articles
-- [Working with dataframes](dataframe.md)
+- [Understanding dataframes](dataframe.md)
 
 ### References
 - [Getting Started with dataframes](https://www.databricks.com/spark/getting-started-with-apache-spark/dataframes)
