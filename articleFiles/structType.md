@@ -1,5 +1,7 @@
 ## Struct Data type
 
+created on:11-2-2025
+
 Struct data types is a complex data type in apache spark. It is used to store groups of multiple columns as a single entity.
 Typically, Struct Type is a collection of Struct Field elements, which has 
 - A name
