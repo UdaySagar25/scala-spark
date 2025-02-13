@@ -1,5 +1,7 @@
 ## Dataframe Column Manipulations
 
+created on: 10-2-2025
+
 Dataframe column manipulations on spark dataframes, are operations that are done on dataframe columns which help in cleaning the data, feature engineering and transforming the data for better analysis.
 
 Let us now look into what are the column operations that can be done on a spark dataframe.
