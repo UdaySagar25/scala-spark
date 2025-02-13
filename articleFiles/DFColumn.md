@@ -21,7 +21,7 @@ df.show()
 **Output**
 ```text
 +----+--------+-----+
-|Roll|    Name|Marks|[moreQuestions.md](moreQuestions.md)
+|Roll|    Name|Marks|
 +----+--------+-----+
 |   1|    Ajay|   55|
 |   2|Bharghav|   63|
@@ -35,8 +35,8 @@ df.show()
 `.withColumn()` method is used to add a new column based on the existing column
 ```scala
 // Adding a new column to the created dataframe
-val add_column=df.withColumn("Updated Marks", col("Marks")+5)
-add_column.show()
+val addColumn=df.withColumn("Updated Marks", col("Marks")+5)
+addColumn.show()
 ```
 **Output**
 ```text
@@ -55,8 +55,8 @@ add_column.show()
 `.withColumnRenamed()` method is used to rename the column names
 ```scala
 // Renaming an existing column
-val rename_column= df.withColumnRenamed("Roll", "Roll Number")
-rename_column.show()
+val renameColumn= df.withColumnRenamed("Roll", "Roll Number")
+renameColumn.show()
 ```
 **Output**
 ```text
@@ -75,8 +75,8 @@ rename_column.show()
 `.drop()` is used to drop the specific columns from the dataframe
 ```scala
 // Dropping an existing column
-val drop_column=df.drop("Roll")
-drop_column.show()
+val dropColumn=df.drop("Roll")
+dropColumn.show()
 ```
 **Output**
 ```text
@@ -94,8 +94,8 @@ drop_column.show()
 ### 4. How to select specific columns from the dataframe?
 `.select()` method is used to select the desired columns to be displayed of the dataframe
 ```scala
-val select_columns = df.select("Name", "Marks")
-select_columns.show()
+val selectColumns = df.select("Name", "Marks")
+selectColumns.show()
 ```
 **Output**
 ```text
@@ -114,8 +114,8 @@ select_columns.show()
 `filter()` method is used to filter the rows, based on the column values
 ```scala
 // Filtering Based on Column Values
-val filter_column=add_column.filter(col("Updated Marks")>=65)
-filter_column.show()
+val filterColumn=addColumn.filter(col("Updated Marks")>=65)
+filterColumn.show()
 ```
 **Outupt**
 ```text
@@ -133,7 +133,7 @@ filter_column.show()
 `.when()` and `.otherwise()` methods are used to create columns whose values are based on the given conditions
 ```scala
 // Creating columns with conditional values
-val dfCategory=add_column.withColumn("Division", when(col("Updated Marks")>70, "Distinction").otherwise("First class"))
+val dfCategory=addColumn.withColumn("Division", when(col("Updated Marks")>70, "Distinction").otherwise("First class"))
 dfCategory.show()
 ```
 ```text
