@@ -133,6 +133,7 @@ val dfSubstring = df.withColumn("Name Substring", substring(col("Name"), 1, 3))
 dfSubstring.show()
 ```
 **Note:** String indexing starts from 1, instead of 0. Make sure to extract the substrings accordingly.
+
 **Output**
 ```text
 +----+--------+----------------+-------------+--------------+
