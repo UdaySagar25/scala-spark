@@ -143,7 +143,7 @@ This saves the output file in the `output` directory.
 ### Summary
 Throughout this article, we have seen how spark allows accessing data from the csv source files.
 We have also looked into
-- Reading the csv files
+- How to the csv files
 - How to read csv files when the delimiter is different(";" , ",", "|")
 - How to select the select required columns
 - How to filter the rows based on conditions
