@@ -9,6 +9,16 @@ String operations on Dataframes are categorized into 3 types
 - String concatenation
 
 Before we begin, let us create a new dataframe 
+```scala
+val df: DataFrame=Seq(
+      (1, "Ajay", "Physics","Hyderabad"),
+      (2, "Bharghav","Cyber Security","Mumbai"),
+      (3, "Chaitra","Material Science", "Indore"),
+      (4, "Kamal","Design", "Puri"),
+      (5, "Sohaib","Nuclear Science", "Cochin")
+    ).toDF("Roll", "Name","Dept", "Location")
+```
+**Output**
 ```text
 +----+--------+----------------+---------+
 |Roll|    Name|            Dept| Location|
@@ -19,7 +29,7 @@ Before we begin, let us create a new dataframe
 |   4|   Kamal|          Design|     Puri|
 |   5|  Sohaib| Nuclear Science|   Cochin|
 +----+--------+----------------+---------+
-```
+
 We shall now see implementation of various string operations on the above dataframe.
 
 ### How to convert the string data to lowercase?
@@ -63,20 +73,20 @@ upperDf.show()
 ### How to trim white spaces in the dataframe?
 We use `trim(col())` method inside `.withColumn()` method. This method trims the white spaces from both the sides of the colum value
 ```scala
-val dfTrim = df.withColumn("Dept Trimmed", trim(col("Dept")))
+val dfTrim = df.withColumn("Loc Trimmed", trim(col("Location")))
 dfTrim.show()
 ```
 **Output**
 ```text
-+----+--------+----------------+---------+----------------+
-|Roll|    Name|            Dept| Location|    Dept Trimmed|
-+----+--------+----------------+---------+----------------+
-|   1|    Ajay|         Physics|Hyderabad|         Physics|
-|   2|Bharghav|  Cyber Security|   Mumbai|  Cyber Security|
-|   3| Chaitra|Material Science|   Indore|Material Science|
-|   4|   Kamal|          Design|     Puri|          Design|
-|   5|  Sohaib| Nuclear Science|   Cochin| Nuclear Science|
-+----+--------+----------------+---------+----------------+
++----+--------+----------------+-------------+-----------+
+|Roll|    Name|            Dept|     Location|Loc Trimmed|
++----+--------+----------------+-------------+-----------+
+|   1|    Ajay|         Physics|  Hyderabad  |  Hyderabad|
+|   2|Bharghav|  Cyber Security|     Mumbai  |     Mumbai|
+|   3| Chaitra|Material Science|      Indore |     Indore|
+|   4|   Kamal|          Design|       Puri  |       Puri|
+|   5|  Sohaib| Nuclear Science|      Cochin |     Cochin|
++----+--------+----------------+-------------+-----------+
 ```
 ### How to find the length of the string value in a dataframe?
 To find the length of the sting column values, use the method `length(col())` inside the `.withColumn()` method
@@ -154,8 +164,9 @@ dfConcat.show()
 ```
 
 ### Summary
-In this article, we have covered the basic String operations in a spark dataframe. We have covered functions under basic string functions,
-substring methods and string concatenation. These methods help us clean the data which will further help us with proper analysis.
+- In this article, we have covered the String operations in a spark dataframe. 
+- We have covered basic functions string functions, substring methods and string concatenation.
+- These methods help us clean the data which will further help us with proper analysis.
 
 ### References
 - [String Functions](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/functions.html#string-functions)
