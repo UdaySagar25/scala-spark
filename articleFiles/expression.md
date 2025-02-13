@@ -22,7 +22,8 @@ Let's use the previous dataframe that we used for math oeprations. [Refer this a
 ### How to create a new column from an existing column using expressions?
 We will use `select()` method to apply expressions to create a new column with updated scores
 ```scala
-df.select($"Name",$"Double Marks", $"Double Marks" + 5 as ("Updated Marks")).show()
+val applyExpr=df.select($"Name",$"Double Marks", $"Double Marks" + 5 as ("Updated Marks"))
+applyExpr.show()
 ```
 **Output**
 ```text
@@ -40,7 +41,8 @@ df.select($"Name",$"Double Marks", $"Double Marks" + 5 as ("Updated Marks")).sho
 ### How to apply string operations on a dataframe using expressions?
 We will use the select() method to create a new column that converts the name column to uppercase.
 ```scala
-df.select($"Name", upper($"Name").as("Updated Name")).show()
+val applyString=df.select($"Name", upper($"Name").as("Updated Name"))
+applyString.show()
 ```
 **Output**
 ```text
@@ -58,7 +60,8 @@ df.select($"Name", upper($"Name").as("Updated Name")).show()
 ### How to filter out the rows of a dataframe using expressions?
 If we want to filter the rows based on a value using expressions, then we have to define the expression inside the `.filter()` method
 ```scala
-df.filter( $"Final Marks" > 330 && $"Float Marks" >=70.0 ).show()
+val filterExpr=df.filter( $"Final Marks" > 330 && $"Float Marks" >=70.0 )
+filterExpr.show()
 ```
 **Output**
 ```text
