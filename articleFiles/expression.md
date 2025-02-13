@@ -6,7 +6,7 @@ Expression are used in various scenarios. They are used in select, filter,agg et
 
 In this article we shall be looking at handling expressions when they are used in combination with select, filter and agg. 
 
-Let's use the previous dataframe that we used for math oeprations. [Refer this article](mathOps.md)
+Let's use the previous dataframe that we used for math oeprations. [Refer this article](datatypes.md)
 ```text
 +----+--------+-----------+-----------+------------+
 |Roll|    Name|Final Marks|Float Marks|Double Marks|
@@ -18,6 +18,7 @@ Let's use the previous dataframe that we used for math oeprations. [Refer this a
 |   5|  Sohaib|        450|       70.8|        90.6|
 +----+--------+-----------+-----------+------------+
 ```
+
 ### How to create a new column from an existing column using expressions?
 We will use `select()` method to apply expressions to create a new column with updated scores
 ```scala
@@ -35,7 +36,8 @@ df.select($"Name",$"Double Marks", $"Double Marks" + 5 as ("Updated Marks")).sho
 |  Sohaib|        90.6|         95.6|
 +--------+------------+-------------+
 ```
-### How to apply string operations on a dataframe using experssions?
+
+### How to apply string operations on a dataframe using expressions?
 We will use the select() method to create a new column that converts the name column to uppercase.
 ```scala
 df.select($"Name", upper($"Name").as("Updated Name")).show()
@@ -52,6 +54,7 @@ df.select($"Name", upper($"Name").as("Updated Name")).show()
 |  Sohaib|      SOHAIB|
 +--------+------------+
 ```
+
 ### How to filter out the rows of a dataframe using expressions?
 If we want to filter the rows based on a value using expressions, then we have to define the expression inside the `.filter()` method
 ```scala
@@ -93,6 +96,9 @@ In the article, we have seen,
 - What is an expression
 - What are the commonly used functions to implement expression
 - How to use custom expression using `expr()` method
+
+### Related Articles
+[Dataframes](datatypes.md)
 
 ### References
 - [Spark Expr()](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.functions.expr.html)
