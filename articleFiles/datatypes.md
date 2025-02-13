@@ -1,5 +1,7 @@
 ## DATA TYPES
 
+created on: 10-2-2025
+
 **Apache Spark** gives the users the flexibility of handling data of different types seamlessly. Spark Data Types are usually categorized into 5 types
   
 Data types are typically divided into 5 types 
@@ -193,4 +195,3 @@ What we have covered ?
 ## References:
 - [Spark Data Types](https://spark.apache.org/docs/3.5.3/sql-ref-datatypes.html)
 - [Working with Dates and Time in Spark](https://www.databricks.com/blog/2020/07/22/a-comprehensive-look-at-dates-and-timestamps-in-apache-spark-3-0.html)
-- [How to Work with Spark Array Type](https://www.projectpro.io/recipes/explain-working-with-array-type-column-on-spark-dataframe#:~:text=Spark%20ArrayType%20is%20a%20collection,the%20ArrayType%20scala%20case%20class)
