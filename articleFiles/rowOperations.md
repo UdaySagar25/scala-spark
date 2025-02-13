@@ -2,7 +2,7 @@
 
 created on: 11-2-2025
 
-Let's use the previously created data frame which we created during Data frame column operations. [Refer this to create dataframes](scala/DFColumn.md)
+Let's use the previously created data frame which we created during Data frame column operations. [Refer this to create dataframes](DFColumn.md)
 
 ```text
 +----+--------+-----+
@@ -15,11 +15,13 @@ Let's use the previously created data frame which we created during Data frame c
 |   5|  Sohaib|   70|
 +----+--------+-----+
 ```
+
 ### How to add a new row to an existing dataframe?
 Spark dataframes are immutable, which implies that we cannot directly add new rows to existing dataframe. Instead, we have to create a new dataframe and combine both using `.union(<new DF name>)` operation.
 ```scala
 val newRow=Seq((6,"Tanmay", 77)).toDF("Roll", "Name", "Marks")
 val updatedDF=df.union(newRow)
+updateDf.show()
 ```
 **Outupt**
 ```text
@@ -34,12 +36,14 @@ val updatedDF=df.union(newRow)
 |   6|  Tanmay|   77|
 +----+--------+-----+
 ```
+
 ### How to add multiple new rows to an existing dataframe?
 Adding multiple rows to dataframe is similar to how we add a single row to the dataframe
 ```scala
 val multipleRows=Seq((7,"Tina",67),
       (8,"Utkarsh",65)).toDF("Roll", "Name", "Marks")
 val moreRows=updatedDF.union(multipleRows)
+moreRows.show()
 ```
 **Outupt**
 ```text
@@ -56,6 +60,7 @@ val moreRows=updatedDF.union(multipleRows)
 |   8| Utkarsh|   65|
 +----+--------+-----+
 ```
+
 ### How to delete rows from the dataframe?
 As we already know that dataframes are immutable, deleting rows from it directly is not possible.
 Instead, what we can do is that we can create a copy of dataframe without the rows that are not required.
@@ -92,10 +97,41 @@ newDf.show()
 |   6|  Tanmay|   77|
 +----+--------+-----+
 ```
+
 ### How to get the distinct rows of the dataframe?
 We can get the distinct rows from the dataframe using the below method
 ```scala
-moreRows.distinct().show()
+val distinctRows=moreRows.distinct()
+distinctRows.show()
+```
+**Output**
+```text
++----+--------+-----+
+|Roll|    Name|Marks|
++----+--------+-----+
+|   1|    Ajay|   55|
+|   2|Bharghav|   63|
+|   3| Chaitra|   60|
+|   4|   Kamal|   75|
+|   5|  Sohaib|   70|
+|   6|  Tanmay|   77|
+|   7|    Tina|   67|
+|   8| Utkarsh|   65|
+|   8| Utkarsh|   65|
++----+--------+-----+
+
++----+--------+-----+
+|Roll|    Name|Marks|
++----+--------+-----+
+|   1|    Ajay|   55|
+|   2|Bharghav|   63|
+|   3| Chaitra|   60|
+|   4|   Kamal|   75|
+|   5|  Sohaib|   70|
+|   6|  Tanmay|   77|
+|   7|    Tina|   67|
+|   8| Utkarsh|   65|
++----+--------+-----+
 ```
 
 ### How to sort the rows of a dataframe?
@@ -122,7 +158,6 @@ ascendingOrder.show()
 |   1|    Ajay|   55|
 +----+--------+-----+
 
-
 +----+--------+-----+
 |Roll|    Name|Marks|
 +----+--------+-----+
@@ -137,7 +172,7 @@ ascendingOrder.show()
 +----+--------+-----+
 ```
 
-## Summary 
+### Summary 
 Throughout this article, we have learnt about the row operations in apache spark dataframes. We have learnt,
 - Add rows to a dataframe
 - Filter the rows of dataframe
@@ -145,6 +180,6 @@ Throughout this article, we have learnt about the row operations in apache spark
 - Get the distinct rows of a dataframe
 - Sort the rows of the dataframe
 
-## References
+### References
 - [How to loop through each of dataframe](https://stackoverflow.com/questions/36349281/how-to-loop-through-each-row-of-dataframe-in-pyspark)
 - [How to sort dataframes?](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.DataFrame.sort.html)
