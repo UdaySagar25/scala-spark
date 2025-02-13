@@ -110,7 +110,8 @@ Aggregate operations usually include,
 ### How to find the sum of values in a column?
 We can use spark's `sum()` method inside the `.agg()` method 
 ```scala
-df.agg(sum("Final Marks").alias("Total Score")).show()
+val colSum=df.agg(sum("Final Marks").alias("Total Score"))
+colSum.show()
 ```
 **Output**
 ```text
@@ -124,7 +125,8 @@ df.agg(sum("Final Marks").alias("Total Score")).show()
 ### How to find the average of column values?
 We can use spark's `avg()` method inside the `.agg()` method
 ```scala
-df.agg(avg("Float Marks").alias("Average Score")).show()
+val colAvg=df.agg(avg("Float Marks").alias("Average Score"))
+colAvg.show()
 ```
 **Output**
 ```text
@@ -138,7 +140,8 @@ df.agg(avg("Float Marks").alias("Average Score")).show()
 ### How to find the minimum value of a column in a dataframe?
 We can use spark's `min()` method inside the `.agg()` method
 ```scala
-df.agg(min("Double Marks").alias("Minimum Score")).show()
+val colMin=df.agg(min("Double Marks").alias("Minimum Score"))
+colMin.show()
 ```
 **Output**
 ```text
@@ -151,7 +154,8 @@ df.agg(min("Double Marks").alias("Minimum Score")).show()
 ### How to find the maximum value of a column in a dataframe?
 We can use spark's `max()` method inside the `.agg()` method
 ```scala
-df.agg(avg("Float Marks").alias("Maximum Score")).show()
+val colMax=df.agg(max("Float Marks").alias("Maximum Score"))
+colMax.show()
 ```
 **Output**
 ```text
