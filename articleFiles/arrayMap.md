@@ -50,7 +50,8 @@ arrayElements.show()
 ### How to check the length of the array in a dataframe?
 To get the size/length of the array, `size()` method is used
 ```scala
-df.withColumn("Marks Length",size($"Marks")).show()
+val arrSize=df.withColumn("Marks Length",size($"Marks"))
+arrSize.show()
 ```
 **Output**
 ```text
@@ -69,7 +70,8 @@ df.withColumn("Marks Length",size($"Marks")).show()
 To answer this, spark has a method `array_contains()` which will return whether the array contains the value or not
 ```scala
 // returns true if the array contains marks '63'
-df.withColumn("Has Marks", array_contains($"Marks", 63)).show()
+val hasMarks=df.withColumn("Has Marks", array_contains($"Marks", 63))
+hasMarks.show()
 ```
 **Output**
 ```text
@@ -86,7 +88,8 @@ df.withColumn("Has Marks", array_contains($"Marks", 63)).show()
 ### How to explode array elements?
 to explode an array elements, i.e., to create a new row for each of array elements, use `explode()` method.
 ```scala
-df.withColumn("Marks",explode($"Marks")).show()
+val arrExplode=df.withColumn("Marks",explode($"Marks"))
+arrExplode.show()
 ```
 **Output**
 ```text
@@ -115,33 +118,32 @@ df.withColumn("Marks",explode($"Marks")).show()
 To create a dataframe with Map type rows, we use `Map()` method
 ```scala
 val mapDf=Seq(
-      (1, Map("name"->"Ajay", "Marks"->55)),
-      (2, Map("name"->"Bharghav", "Marks"->63)),
-      (3, Map("name"->"Chaitra", "Marks"->60)),
-      (4, Map("name"->"Kamal", "Marks"->75)),
-      (5, Map("name"->"Sohaib", "Marks"->70))
+      (1, Map("name"->"Ajay", "Marks"->"55")),
+      (2, Map("name"->"Bharghav", "Marks"->"63")),
+      (3, Map("name"->"Chaitra", "Marks"->"60")),
+      (4, Map("name"->"Kamal", "Marks"->"75")),
+      (5, Map("name"->"Sohaib", "Marks"->"70"))
     ).toDF("Id", "Details")
-mapDf.show()
+
+mapDf.show(truncate=false)
 ```
 **Output**
 ```text
-DataFrame:
-+---+--------------------+
-| Id|             Details|
-+---+--------------------+
-|  1|Map(name -> Ajay,...|
-|  2|Map(name -> Bhargh..|
-|  3|Map(name -> Chai....|
-|  4|Map(name -> Kamal...|
-|  5|Map(name -> Sohaib..|
-+---+--------------------+
++---+-------------------------------+
+|Id |Details                        |
++---+-------------------------------+
+|1  |{name -> Ajay, Marks -> 55}    |
+|2  |{name -> Bharghav, Marks -> 63}|
+|3  |{name -> Chaitra, Marks -> 60} |
+|4  |{name -> Kamal, Marks -> 75}   |
+|5  |{name -> Sohaib, Marks -> 70}  |
++---+-------------------------------+
 ```
 
 ### How to access Map values of a dataframe?
 ```scala
-mapDf.withColumn("Name", $"Details"("name"))
-.withColumn("Marks", $"Details"("Marks"))
-.show()
+val mapValues=mapDf.withColumn("Name", $"Details"("name")).withColumn("Marks", $"Details"("Marks"))
+mapValues.show(truncate=false)
 ```
 **Output**
 ```text
@@ -157,9 +159,8 @@ mapDf.withColumn("Name", $"Details"("name"))
 ```
 ### How to map key-value pairs in a dataframe?
 ```scala
-mapDf.withColumn("Keys", map_keys($"Details"))
-  .withColumn("Values", map_values($"Details"))
-  .show()
+val keyValue=mapDf.withColumn("Keys", map_keys($"Details")).withColumn("Values", map_values($"Details"))
+keyValue.show(truncate=false)
  ```
 **Output**
 ```text
