@@ -1,5 +1,7 @@
 ## Dataframe
 
+created on: 10-2-2025
+
 ### What is a Dataframe ?
 A dataframe is a collection of data with a set of named columns. It is similar to SQL table where the data is stored in rows and columns. They are built on top of RDDs and are usually used to process large amounts of data.
 
