@@ -126,8 +126,14 @@ Only the selected column's null values will be replaced
 |   5| Sohaib|        450|       55.7|        90.6|
 +----+-------+-----------+-----------+------------+
 ```
-### How to replace null value with the aggregate values?
-Replacing of null values can be done with the help of `na.fill()`, `Map()` and `.agg()` methods
-```scala
+### Summary
+Null values in data are inevitable and exist no matter whatever conditions are put. And, null values can interfere with out interpretations as well. We have seen methods to handle null values in spark dataframes. We have looked at
+- Finding the rows with null values.
+- Filtering rows which have null values in sepcific columns.
+- Dropping the rows which have null values.
+- Replacing the all the null values.
+- Replacing null values of a particular column with a specific value.
 
-```
+### References
+- [Null Semantics](https://spark.apache.org/docs/3.5.2/sql-ref-null-semantics.html#comp-operators)
+- [Filtering Null Values from dataframe](https://stackoverflow.com/questions/39727742/how-to-filter-out-a-null-value-from-spark-dataframe)
