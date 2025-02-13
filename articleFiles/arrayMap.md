@@ -1,5 +1,7 @@
 ## Arrays and Map Types
 
+created on: 11-2-2025
+
 ### What are arrays and map types?
 Arrays are a collection of elements within a single row. They are useful for storing multiple values corresponding to a single entity.
 Maps are a data type which store information in Key-Value pair format. They are similar to dictionaries and hash maps, which are widely used in other languages.
