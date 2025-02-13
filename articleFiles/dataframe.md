@@ -1,13 +1,24 @@
-## Dataframes
+## Dataframe
 
----
-
-### 1. What is a Dataframe ?
+### What is a Dataframe ?
 A dataframe is a collection of data with a set of named columns. It is similar to SQL table where the data is stored in rows and columns. They are built on top of RDDs and are usually used to process large amounts of data.
 
 First let's create a spark session, then we will start with creating an empty dataframe. To create a Spark session refer the [Spark Session Page](https://namastespark.com/docs/spark/spark-session/)
 
-### 2. How to define a schema for a dataframe ?
+### How to create an empty dataframe ?
+```scala
+val df = spark.emptyDataFrame
+df.show()
+```
+**Output**
+```text
+++
+||
+++
+++
+```
+
+### How to define a schema for a dataframe ?
 ```scala
 // We will be creating a dataframe of marks obtained by students in their final exam.
 val schema = StructType(Seq(
@@ -25,7 +36,7 @@ emptyDF.show()
 +----+----+-----+
 +----+----+-----+
 ```
-### 3. How to create a DataFrame from a CSV File
+### How to create a DataFrame from a CSV File
 Here we will look into creating a dataframe from an already existing source file. We'll be using CSV file as source file.
 ```scala
 // Read CSV File into DataFrame
@@ -49,8 +60,8 @@ df.show()
 |   5|  Sohaib|   70|
 +----+--------+-----+
 ```
-To know more about converting different source files to DataFrame, [Please refer this](https://kontext.tech/article/532/scala-parse-json-string-as-spark-dataframe)
-### 4. How to read the schema of the dataframe?
+
+### How to read the schema of the dataframe?
 To read the schema of the dataframe, use the `.printSchema()` method.
 ```scala
 // prints the shcema of the dataframe
@@ -64,7 +75,7 @@ root
  |-- Marks: integer (nullable = true)
 ```
 
-There is another method to read the schema of the dataframe. `df.schema` method can be used to display the dataframe's structure
+There is another method to read the schema of the dataframe. `df.schema` method can be used to display the dataframe's structure.
 ```scala
 //alternate way to print the schema of the created DataFrame
 println(emptyDF.schema)
@@ -74,7 +85,7 @@ println(emptyDF.schema)
 StructType(StructField(Roll,IntegerType,true),StructField(Name,StringType,true),StructField(Marks,IntegerType,true))
 ```
 
-### 5. How to convert DataFrames to RDD?
+### How to convert DataFrames to RDD?
 You can convert a DataFrame to RDD using the `.rdd` method.
 ```scala
 import spark.implicits._
@@ -107,7 +118,7 @@ typedRDD.collect().foreach(println)
 (5,Sohaib,70)
 ```
 
-### 6. How to convert Dataframes to Datasets?
+### How to convert Dataframes to Datasets?
 ```scala
 import spark.implicits._
 // Define a case class for Dataset
@@ -142,15 +153,14 @@ ds.show()
 ```
 
 ### Summary
-We have covered basic concepts of Spark DataFrames, starting from its definition, schema creation, conversion of Dataframes to other data structures. 
+We have covered basic concepts of Spark DataFrames, starting from its definition, schema creation, conversion of Dataframes to other data structures.
 We now know the salient features of DataFrames, including
-- `df.schema` and `df.printSchema()` returns the schema(skeleton) of the dataframe.
-- Reading data from CSV files, using the method `read.csv` 
+- `df.schema()` and `df.printSchema()` returns the schema(skeleton) of the dataframe.
+- Reading data from CSV files, using the method `read.csv`
 - Converting Dataframes to RDD using `.rdd` and to datasets using `as.[T]`
 - How DataFrames are converted to RDDs and Datasets.
 
-## References
+### References
 - [Create DataFrames ](https://learn.microsoft.com/en-us/azure/databricks/getting-started/dataframes#create-dataframe)
 - [DataFrames](https://spark.apache.org/docs/latest/sql-programming-guide.html)
 - [Create RDDs](https://stackoverflow.com/questions/32531224/how-to-convert-dataframe-to-rdd-in-scala)
-- [Handling JSON Files in Spark]([https://kontext.tech/article/532/scala-parse-json-string-as-spark-dataframe](https://spark.apache.org/docs/3.5.4/sql-data-sources-json.html#:~:text=the%20Spark%20repo.-,Spark%20SQL%20can%20automatically%20infer%20the%20schema%20of%20a%20JSON,not%20a%20typical%20JSON%20file.))
