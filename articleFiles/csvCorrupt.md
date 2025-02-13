@@ -6,6 +6,15 @@ Spark provides us with methods with which, we can handle the corrupted and null 
 ### How to handle csv files with null values and corrupted values
 To ensure that spark correctly identifies the data type of the csv values, we have to define the schema explicitly.
 
+```csv
+Roll,Name,Final Marks,Float Marks,Double Marks
+1,Ajay,300,55.5,
+2,Bharghav,350,63.2,88.5
+3,Chaitra,320,60.1,75.8
+4,Kamal,360,75.0,82.3
+5,Sohaib,gchbnv,70.8,90.6
+```
+
 ```scala
 val schema = StructType(Seq(
         StructField("Roll", IntegerType, true),
@@ -21,9 +30,10 @@ val df=spark.read.schema(schema).option("header","true")
       .csv("corruptData.csv")
 df.show()
 ```
+We can see that corrupted values are reads as NULL values
+
 **Output**
 ```text
-We can see that corrupted values are reads as NULL values
 +----+--------+-----------+-----------+------------+
 |Roll|    Name|Final Marks|Float Marks|Double Marks|
 +----+--------+-----------+-----------+------------+
