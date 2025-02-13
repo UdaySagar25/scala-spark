@@ -6,7 +6,7 @@ In this article, we are going to see different math operations and its applicati
 These math operations generally include methods like, addition, subtraction, multiplication, division, average, floor and ceil values and many more.
 Let us now look into each of these mathematical operations and how they are applied on dataframes.
 
-We'll be using the below dataframe which we already created for DataType operations [Refer this link on creating a dataframe](dataframe.md)
+We'll be using the below dataframe which we already created for DataType operations [Refer this link on creating a dataframe](datatypes.md)
 
 ```text
 +----+--------+-----------+-----------+------------+
@@ -42,6 +42,7 @@ sumCol.show()
 |   5|  Sohaib|        450|       70.8|        90.6| 161.4000030517578|
 +----+--------+-----------+-----------+------------+------------------+
 ```
+
 ### How to find the difference between two columns?
 Difference between two columns is calculated in a similar way the addition of values of two columns is done, i.e., using `.withColumn()` method
 ```scala
@@ -60,6 +61,7 @@ diffCol.show()
 |   5|  Sohaib|        450|       70.8|        90.6|19.799996948242182|
 +----+--------+-----------+-----------+------------+------------------+
 ```
+
 ### How to multiply the column values in a dataframe?
 Mutliplication of column values is done in the similar how addition and subtraction was done earlier, using `.withColumn()`
 ```scala
@@ -78,6 +80,7 @@ product.show()
 |   5|  Sohaib|        450|       70.8|        90.6|106.20000457763672|
 +----+--------+-----------+-----------+------------+------------------+
 ```
+
 ### How to apply divide operation to the dataframe?
 Division of column values of a dataframe is carried out by the `/` operator and is applied within `.withColumn()` method
 ```scala
@@ -117,6 +120,7 @@ df.agg(sum("Final Marks").alias("Total Score")).show()
 |       1780|
 +-----------+
 ```
+
 ### How to find the average of column values?
 We can use spark's `avg()` method inside the `.agg()` method
 ```scala
@@ -130,6 +134,7 @@ df.agg(avg("Float Marks").alias("Average Score")).show()
 |64.92000045776368|
 +-----------------+
 ```
+
 ### How to find the minimum value of a column in a dataframe?
 We can use spark's `min()` method inside the `.agg()` method
 ```scala
@@ -143,7 +148,7 @@ df.agg(min("Double Marks").alias("Minimum Score")).show()
 |         75.8|
 +-------------+
 ```
-### How to find the minimum value of a column in a dataframe?
+### How to find the maximum value of a column in a dataframe?
 We can use spark's `max()` method inside the `.agg()` method
 ```scala
 df.agg(avg("Float Marks").alias("Maximum Score")).show()
@@ -156,12 +161,13 @@ df.agg(avg("Float Marks").alias("Maximum Score")).show()
 |         75.0|
 +-------------+
 ```
+
 ### Summary
 We have looked into various Mathematical Operations in a Spark Dataframe. We have covers basic arithmetic operations, using `.withColumn()`
 and also saw how aggregate functions are applied using `.agg()` method inside which, we apply various aggregation methods.
 
 ### Related Articles
-- [Creating a Dataframe](dataframe.md)
+- [Creating a Dataframe](datatypes.md)
 
 ### References
 - [Spark Math Operations](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/functions.html#math-functions)
