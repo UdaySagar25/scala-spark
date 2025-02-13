@@ -18,7 +18,8 @@ For easy understanding purpose, we'll be using the previously created student da
 +----+--------+-----------+-----------+------------+
 ```
 ### How is select() method different from selectExpr() in selecting columns of a dataframe?
-Both `select()` and `selectExpr()` do the same job in selecting the columns. But they both differ in the way select command is written. Let's see how they differ.
+Both `select()` and `selectExpr()` do the same job in selecting the columns. `selectExpr()` is a variant of `select()` that accepts SQL expressions.
+They both differ in the way select command is written. Let's see how they differ.
 ```scala
 df.select($"Roll", $"Name", $"Final Marks").show()
 
