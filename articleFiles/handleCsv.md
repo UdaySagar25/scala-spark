@@ -49,7 +49,7 @@ Spark provides a flag `header` which when set to true, will read the first row o
 When the flag `header` is set to false, the headers will not be read and custom column names will be printed
 
 ```scala
-val headCsvYes=spark.read.option("header","false")
+val headCsvYes=spark.read.option("header","true")
       .option("inferSchema","true")
       .csv("csvFiles/students.csv")
 
