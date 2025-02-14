@@ -4,7 +4,7 @@ created on: 14-2-2025
 
 The data in csv files are stored in different formats.
 - Records can be stored in single line with a delimiter.
-- Records stored in a single line can have various delimiters.
+- Records stored in a single line can be be separated using other deilmiters as well(",", "|", ";")
 - Records can be stores in multiple lines.
 
 Spark provides us with multiple options to handle each and every scenario of csv data format. Let us now see each one of them
