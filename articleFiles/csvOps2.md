@@ -14,7 +14,7 @@ Roll,Name,Marks
 4,Kamal,75
 5,Sohaib,70
 ```
-To define the shchema, we use the flag `inferschema`
+To define the schema, we use the flag `inferschema`
 ```scala
 val df=spark.read.option("inferschema","true").option("header","true")
       .csv("csvFiles/students.csv")
