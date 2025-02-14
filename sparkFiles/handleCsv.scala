@@ -1,6 +1,5 @@
 import org.apache.spark.sql.{DataFrame, SparkSession}
-import org.apache.spark.sql.types._
-import org.apache.spark.sql.functions._
+
 
 object handleCsv {
   def main(args: Array[String]): Unit = {
@@ -11,10 +10,23 @@ object handleCsv {
 
     import spark.implicits._
     //reading a csv file
+
+    val headCsvYes=spark.read.option("header","false")
+      .option("inferSchema","true")
+      .csv("csvFiles/students.csv")
+
+    headCsvYes.show()
+
+    val headCsv=spark.read.option("header","false")
+      .option("inferSchema","true")
+      .csv("csvFiles/students.csv")
+
+    headCsv.show()
+
     val readCsv= spark.read.option("header", "true")
       .option("inferSchema", "true")
       .option("encoding", "UTF-8")
-      .csv("students.csv")
+      .csv("csvFiles/students.csv")
 
 //    readCsv.show()
 //    readCsv.printSchema()
@@ -23,7 +35,7 @@ object handleCsv {
       .option("inferSchema", "true")
       .option("encoding", "UTF-8")
       .option("delimiter",";")
-      .csv("students1.csv")
+      .csv("csvFile/students1.csv")
 //    delimiterCsv.show()
 
     val df: DataFrame= Seq(
@@ -45,14 +57,14 @@ object handleCsv {
 //      .option("sep", ",")
 //      .save("output")
 
-    val selectVals= readCsv.filter("Marks >= 63")
+    val selectVals= readCsv.filter("Marks >= 73")
 //    selectVals.show()
 
     val selectCols=readCsv.select("Name","Marks")
 //    selectCols.show()
 
     val colName=readCsv.withColumnRenamed("Marks", "Math Marks")
-    colName.show()
+//    colName.show()
 
     colName.write.format("csv")
       .mode("overwrite")
