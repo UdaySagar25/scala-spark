@@ -1,6 +1,6 @@
 ## Handling CSV format files
 
-created on: 13-2-2025
+created on: 14-2-2025
 
 One of the format used for storing data is CSV format. It is possible to handle CSV data in spark using Dataframe-API.
 
@@ -21,7 +21,7 @@ Roll,Name,Marks
 val readCsv= spark.read.option("header", "true")
   .option("inferSchema", "true")
   .option("encoding", "UTF-8")
-  .csv("students.csv")
+  .csv("csvFiles/students.csv")
 
 readCsv.show()
 readCsv.printSchema()
@@ -44,6 +44,51 @@ root
  |-- Marks: integer (nullable = true)
 ```
 
+### How to define the header of the csv files?
+Spark provides a flag `header` which when set to true, will read the first row of the csv file as the heading.
+When the flag `header` is set to false, the headers will not be read and custom column names will be printed
+
+```scala
+val headCsvYes=spark.read.option("header","false")
+      .option("inferSchema","true")
+      .csv("csvFiles/students.csv")
+
+headCsvYes.show()
+```
+**Output**
+```text
++----+--------+-----+
+|Roll|    Name|Marks|
++----+--------+-----+
+|   1|    Ajay|   55|
+|   2|Bharghav|   63|
+|   3| Chaitra|   60|
+|   4|   Kamal|   75|
+|   5|  Sohaib|   70|
++----+--------+-----+
+```
+
+```scala
+val headCsv=spark.read.option("header","false")
+      .option("inferSchema","true")
+      .csv("csvFiles/students.csv")
+
+headCsv.show()
+```
+**Output**
+```text
++----+--------+-----+
+| _c0|     _c1|  _c2|
++----+--------+-----+
+|Roll|    Name|Marks|
+|   1|    Ajay|   55|
+|   2|Bharghav|   63|
+|   3| Chaitra|   60|
+|   4|   Kamal|   75|
+|   5|  Sohaib|   70|
++----+--------+-----+
+```
+
 ### How to handle csv files which has different delimiter?
 Assume that we have a csv file with a delimiter(;). To read the data with semicolon(;) as delimiter, we specify the delimiter in the `option("delimiter",";")` method.
 ```csv
@@ -60,7 +105,7 @@ val delimiterCsv= spark.read.option("header", "true")
       .option("inferSchema", "true")
       .option("encoding", "UTF-8")
       .option("delimiter",";")
-      .csv("students1.csv")
+      .csv("csvFiles/students1.csv")
 delimiterCsv.show()
 ```
 **Output**
@@ -143,7 +188,8 @@ This saves the output file in the `output` directory.
 ### Summary
 Throughout this article, we have seen how spark allows accessing data from the csv source files.
 We have also looked into
-- How to the csv files
+- How to read the csv files
+- How to define the headers for a csv file in spark
 - How to read csv files when the delimiter is different(";" , ",", "|")
 - How to select the select required columns
 - How to filter the rows based on conditions
