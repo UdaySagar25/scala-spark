@@ -163,22 +163,22 @@ dateDf3.printSchema()
 ```
 **Output**
 ```text
-  New CSV file
+New CSV file
 +---+--------+---------+----------+-------------------+-----------+
 | ID|    Name|LongValue|       DOB|        Submit Time|DoubleMarks|
 +---+--------+---------+----------+-------------------+-----------+
-|  1|    Ajay|       10|01/01/2010|2025-02-17 12:30:45|      92.75|
-|  2|Bharghav|       20|04/06/2009|2025-02-17 12:35:30|       88.5|
-|  3| Chaitra|       30|12/12/2010|2025-02-17 12:45:10|       75.8|
-|  4|   Kamal|       40|25/08/2010|2025-02-17 12:40:05|       82.3|
-|  5|  Sohaib|       50|14/04/2009|2025-02-17 12:55:20|       90.6|
+|  1|    Ajay|       10|2010-01-01|2025-02-17 12:30:45|      92.75|
+|  2|Bharghav|       20|2009-06-04|2025-02-17 12:35:30|       88.5|
+|  3| Chaitra|       30|2010-12-12|2025-02-17 12:45:10|       75.8|
+|  4|   Kamal|       40|2010-08-25|2025-02-17 12:40:05|       82.3|
+|  5|  Sohaib|       50|2009-04-14|2025-02-17 12:55:20|       90.6|
 +---+--------+---------+----------+-------------------+-----------+
 
 root
  |-- ID: integer (nullable = true)
  |-- Name: string (nullable = true)
  |-- LongValue: integer (nullable = true)
- |-- DOB: string (nullable = true)
+ |-- DOB: date (nullable = true)
  |-- Submit Time: timestamp (nullable = true)
  |-- DoubleMarks: double (nullable = true)
 ```
