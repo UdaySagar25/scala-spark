@@ -2,7 +2,7 @@
 
 created on: 17-2-2025
 
-There are many instances that we make note of the time of creating a record of data. Few follow the standard notation of date and time format
+There are many instances where we make note of the time of creating a record of data. Few follow the standard notation of date and time format
 Few others follow a custom way of recording the date and time. To handle these kind of situations, spark has few methods which help us in correctly interpreting the date and time field.
 
 
@@ -57,8 +57,8 @@ To tackle this, We make sure that spark infers the schema automatically. You can
 
 ## How to correctly define the data type of date and time stamp column in csv file?
 
-Spark has few methods, which will help us in correctly defining the date and time format in a csv file?
-We shall now look at them and the file behaves to each of the method.
+Spark has few methods, which will help us in correctly defining the date and time format in a csv file.
+We shall now look at them and also at the behaviour of the file behaves for the method.
 
 ```scala
 val dateDf1=spark.read.option("header","true")
@@ -70,8 +70,8 @@ println("DF-2")
 dateDf1.show()
 dateDf1.printSchema()
 ```
-We can use the spark's `dateFormat` flag to specifically set the date format 
-How do you think, the schema will be inferred as, based on the above code and csv data?
+We can use the spark's `dateFormat` flag to specifically set the date format.
+How do you think the schema will be inferred as, based on the above code and csv data?
 ```text
 DF-2
 +---+--------+---------+----------+-------------------+-----------+
