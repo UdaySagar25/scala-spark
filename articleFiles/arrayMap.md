@@ -2,9 +2,10 @@
 
 created on: 11-2-2025
 
-### What are arrays and map types?
+updated on: 17-2-2025
+
+### What are Arrays?
 Arrays are a collection of elements within a single row. They are useful for storing multiple values corresponding to a single entity.
-Maps are a data type which store information in Key-Value pair format. They are similar to dictionaries and hash maps, which are widely used in other languages.
 
 Let us start with creating a Dataframe of Array type
 ```scala
@@ -31,7 +32,11 @@ df.show()
 +----+--------+------------+
 ```
 
+**Note:** Array indexing starts from **0** and for any given array of size n, the index of the last element would be **n-1**
+
 ### How to access elements of the array from a dataframe?
+To access the elements of the array, we use `.withColumn()` method, inside which we specify which column's data to be processed.
+
 ```scala
 val arrayElements=df.withColumn("Marks",$"Marks"(1))
 arrayElements.show()
@@ -50,7 +55,7 @@ arrayElements.show()
 ```
 
 ### How to check the length of the array in a dataframe?
-To get the size/length of the array, `size()` method is used
+To get the size/length of the array, `size()` method is used.
 ```scala
 val arrSize=df.withColumn("Marks Length",size($"Marks"))
 arrSize.show()
@@ -69,7 +74,7 @@ arrSize.show()
 ```
 
 ### How to check if an array contains a specific value or not?
-To answer this, spark has a method `array_contains()` which will return whether the array contains the value or not
+Spark has a method `array_contains()` which will return whether the array contains the value or not.
 ```scala
 // returns true if the array contains marks '63'
 val hasMarks=df.withColumn("Has Marks", array_contains($"Marks", 63))
@@ -87,8 +92,10 @@ hasMarks.show()
 |   5|  Sohaib|[86, 74, 70]|    false|
 +----+--------+------------+---------+
 ```
-### How to explode array elements?
-to explode an array elements, i.e., to create a new row for each of array elements, use `explode()` method.
+
+### How to explode the array elements?
+Exploding the array elements means to create a new row/record for each of the array element. To accomplish this, we use the method
+`explode(ColName)`, inside `withColumn()` method.
 ```scala
 val arrExplode=df.withColumn("Marks",explode($"Marks"))
 arrExplode.show()
@@ -116,8 +123,12 @@ arrExplode.show()
 +----+--------+-----+
 ```
 
+### What are Maps?
+Maps are a data type which store information in Key-Value pair format. 
+They are similar to dictionaries and hash maps, which are widely used in other languages.
+
 ### How to create a dataframe with Map Type?
-To create a dataframe with Map type rows, we use `Map()` method
+To create a dataframe with Map type rows, we use `Map()` method.
 ```scala
 val mapDf=Seq(
       (1, Map("name"->"Ajay", "Marks"->"55")),
@@ -142,7 +153,7 @@ mapDf.show(truncate=false)
 +---+-------------------------------+
 ```
 
-### How to access Map values of a dataframe?
+### How to access values from the Map in a dataframe?
 ```scala
 val mapValues=mapDf.withColumn("Name", $"Details"("name")).withColumn("Marks", $"Details"("Marks"))
 mapValues.show(truncate=false)
@@ -159,7 +170,9 @@ mapValues.show(truncate=false)
 |  5|Map(name -> Sohaib, Marks -> 70)  |  Sohaib|   70|  
 +---+----------------------------------+--------+-----+
 ```
-### How to map key-value pairs in a dataframe?
+
+### How to separate keys and values of a Map in a dataframe?
+To display the keys and their respective values separately in a dataframe, we use the methods `map_keys(ColName)` and `map_values(ColNames)`
 ```scala
 val keyValue=mapDf.withColumn("Keys", map_keys($"Details")).withColumn("Values", map_values($"Details"))
 keyValue.show(truncate=false)
