@@ -58,7 +58,7 @@ To tackle this, We make sure that spark infers the schema automatically. You can
 ## How to correctly define the data type of date and time stamp column in csv file?
 
 Spark has few methods, which will help us in correctly defining the date and time format in a csv file.
-We shall now look at them and also at the behaviour of the file behaves for the method.
+We shall now look at them and also at the behaviour of the schema for the method.
 
 ```scala
 val dateDf1=spark.read.option("header","true")
