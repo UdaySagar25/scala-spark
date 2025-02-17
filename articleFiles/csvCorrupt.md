@@ -1,6 +1,8 @@
 ## Handling Corrupt in CSV data files
 
-Corrupt values, and null values in data files are a usual thing. They are unavoidable, and we have to deal with them.
+updated on: 17-2-2025
+
+Corrupt values, and null values in source data files are a usual thing. They are unavoidable, and we have to deal with them.
 Spark provides us with methods with which, we can handle the corrupted and null values.
 
 ### How to handle csv files with null values and corrupted values
@@ -30,7 +32,7 @@ val df=spark.read.schema(schema).option("header","true")
       .csv("corruptData.csv")
 df.show()
 ```
-We can see that corrupted values are reads as NULL values
+When a csv file with corrupted values and null values is read in spark, both the null values and corrupted values are displayed as `NULL`.
 
 **Output**
 ```text
@@ -44,25 +46,7 @@ We can see that corrupted values are reads as NULL values
 |   5|  Sohaib|       NULL|       70.8|        90.6|
 +----+--------+-----------+-----------+------------+
 ```
-To handle this situation, we use the `option("mode", "DROPMALFORMED")` which omits the rows with corrupted values
-```scala
-val corruptDf=spark.read.option("header","true")
-      .schema(schema)
-      .option("mode", "DROPMALFORMED")
-      .csv("corruptData.csv")
-    
-corruptDf.show()
-```
-```text
-+----+--------+-----------+-----------+------------+
-|Roll|    Name|Final Marks|Float Marks|Double Marks|
-+----+--------+-----------+-----------+------------+
-|   1|    Ajay|        300|       55.5|        NULL|
-|   2|Bharghav|        350|       63.2|        88.5|
-|   3| Chaitra|        320|       60.1|        75.8|
-|   4|   Kamal|        360|       75.0|        82.3|
-+----+--------+-----------+-----------+------------+
-```
+
 ### How to print the list of corrupted values as a separate column?
 We can use the method `option("mode", "PERMISSIVE")` which creates another column of corrupted values.
 We also need to add another column to store corrupted values, since we are defining the schema explicitly. This means that we have to redefine the schema of the table.
@@ -96,6 +80,29 @@ permissiveDf.show()
 |5   |Sohaib  |NULL       |70.8       |90.6        |5,Sohaib,gchbnv,70.8,90.6|
 +----+--------+-----------+-----------+------------+-------------------------+
 ```
+
+### How to drop the rows with corrupted values of a csv file?
+To handle this situation, we use the `option("mode", "DROPMALFORMED")` which omits the rows with corrupted values
+```scala
+val corruptDf=spark.read.option("header","true")
+      .schema(schema)
+      .option("mode", "DROPMALFORMED")
+      .csv("corruptData.csv")
+    
+corruptDf.show()
+```
+```text
++----+--------+-----------+-----------+------------+
+|Roll|    Name|Final Marks|Float Marks|Double Marks|
++----+--------+-----------+-----------+------------+
+|   1|    Ajay|        300|       55.5|        NULL|
+|   2|Bharghav|        350|       63.2|        88.5|
+|   3| Chaitra|        320|       60.1|        75.8|
+|   4|   Kamal|        360|       75.0|        82.3|
++----+--------+-----------+-----------+------------+
+```
+Since the last record had a corrupted value, only that row has been deleted. The first row's last column value is a Null value, so that is not deleted.
+
 ### How to replace the null values and corrupt values?
 To replace the null values, we use the dataframe's null value methods. To know how to implement those methods, [Refer this article](nullValues.md)
 
@@ -111,4 +118,4 @@ In this article we have seen
 - [Handling CSV files](handleCsv.md)
 
 ### Refernces
-- [How to handle corrput csv files](https://spark.apache.org/docs/latest/sql-data-sources-csv.html)
+- [How to handle corrput csv files?](https://spark.apache.org/docs/latest/sql-data-sources-csv.html)
