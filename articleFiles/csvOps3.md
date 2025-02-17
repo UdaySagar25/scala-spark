@@ -153,7 +153,7 @@ Like the previous, scenario, here also we have the same issue with date and time
 val dateDf3 = spark.read
       .option("header", "true")
       .option("inferSchema", "true")
-      .option("dateFormat", "dd-MM-yyyy")
+      .option("dateFormat", "dd/MM/yyyy")
       .option("timestampFormat", "yyyy-MM-dd HH:mm:ss")
       .csv("csvFiles/studentDate2.csv")
 
