@@ -1,5 +1,6 @@
 ## Handle CSV files of different encodings
 
+created on: 17-2-2025
 
 Encoding CSV files ensures that the data in the file is correctly interpreted and displayed across systems and different regions.
 Encoding determines how the characters are stored and read. Encoding is used to prevent the character corruption, which means that the special characters may become unreadable when wrong encoding is used.
