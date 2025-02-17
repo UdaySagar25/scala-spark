@@ -2,6 +2,8 @@
 
 created on: 14-2-2025
 
+updated on: 17-2-2025
+
 The data in csv files are stored in different formats.
 - Records can be stored in single line with a delimiter.
 - Records stored in a single line can be be separated using other deilmiters as well(",", "|", ";")
@@ -74,9 +76,9 @@ multilineDf.show(truncate =false)
 ### How to read csv files with different line separators?
 Line separators in csv differ with respect to how they are defined.
 There are 3 types of line separators,
-- CR (\r)
-- LF (\n)
-- CRLF (\r\n)
+- CR (\r) - Line separators used in Older and Classic MAC OS 
+- LF (\n) - Line separator used in Linux, and MAC OS
+- CRLF (\r\n) - Line separator used in Windows
 
 Let us now see how to deal with each of the line separators
 we have `students.csv` defined in `CRLF` and `students2.csv` defined in `LF`.
@@ -88,7 +90,7 @@ Roll,Name,Marks
 4,Kamal,75
 5,Sohaib,70
 ```
-Assume we read the `students2.csv` file with `\r\n` separator. The output would be
+Assume we read the `students2.csv` file which is originally written with `\n` line separator, with `\r\n` separator. The output would be
 ```scala
 val lineSepCsv=spark.read.option("header","true").option("lineSep","\r\n")
       .csv("csvFiles/students2.csv")
@@ -104,7 +106,7 @@ lineSepCsv.show()
 ```
 We can see that the output is vague and wrong.
 
-Let us now define it correctly and see the otuput
+Let us now define it with correct line separator, and see the output
 ```scala
 val lineSepCsv1=spark.read.option("header","true").option("lineSep","\n")
       .csv("csvFiles/students2.csv")
@@ -150,11 +152,13 @@ dfDelimiter.show(truncate = false)
 +----+--------+-----+--------------------------------------+
 |1   |Ajay    |55   |"He said good morning" to the teacher"|
 |2   |Bharghav|63   |"This is the locker" in the country"  |
-|3   |Chaitra |60   |You cannotb be serious                |
+|3   |Chaitra |60   |You cannot be serious                 |
 |4   |Kamal   |75   |I love apple pie"                     |
 |5   |Sohaib  |70   |It is raining outside                 |
 +----+--------+-----+--------------------------------------+
 ```
+In the above output, we can clearly see that the quotations in the output table are being displayed incorrectly.
+
 ### Summary
 In this article, we have seen 
 - How to handle csv files with multiline data using `multiLine` flag.
