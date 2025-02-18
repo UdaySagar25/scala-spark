@@ -76,9 +76,9 @@ multilineDf.show(truncate =false)
 ### How to read csv files with different line separators?
 Line separators in csv differ with respect to how they are defined.
 There are 3 types of line separators,
-- CR (\r)
-- LF (\n)
-- CRLF (\r\n)
+- CR (\r) - Line separators used in Older and Classic MAC OS
+- LF (\n) - Line separator used in Linux, and MAC OS
+- CRLF (\r\n) - Line separator used in Windows
 
 Let us now see how to deal with each of the line separators
 we have `students.csv` defined in `CRLF` and `students2.csv` defined in `LF`.
@@ -106,7 +106,7 @@ lineSepCsv.show()
 ```
 We can see that the output is vague and wrong.
 
-Let us now define it correctly and see the otuput
+Let us now define it with correct line separator, and see the output
 ```scala
 val lineSepCsv1=spark.read.option("header","true").option("lineSep","\n")
       .csv("csvFiles/students2.csv")
