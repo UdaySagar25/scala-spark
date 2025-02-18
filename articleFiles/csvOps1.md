@@ -6,7 +6,7 @@ updated on: 18-2-2025
 
 The data in csv files are stored in different formats.
 - Records can be stored in single line with a delimiter.
-- Records stored in a single line can have various delimiters.
+- Records stored in a single line can be be separated using other delimiters as well(",", "|", ";")
 - Records can be stores in multiple lines.
 
 Spark provides us with multiple options to handle each and every scenario of csv data format. Let us now see each one of them
@@ -76,7 +76,7 @@ multilineDf.show(truncate =false)
 ### How to read csv files with different line separators?
 Line separators in csv differ with respect to how they are defined.
 There are 3 types of line separators,
-- CR (\r) - Line separators used in Older and Classic MAC OS
+- CR (\r) - Line separators used in Older and Classic MAC OS 
 - LF (\n) - Line separator used in Linux, and MAC OS
 - CRLF (\r\n) - Line separator used in Windows
 
@@ -90,7 +90,7 @@ Roll,Name,Marks
 4,Kamal,75
 5,Sohaib,70
 ```
-Assume we read the `students2.csv` file with `\r\n` separator. The output would be
+Assume we read the `students2.csv` file which is originally written with `\n` line separator, with `\r\n` separator. The output would be
 ```scala
 val lineSepCsv=spark.read.option("header","true").option("lineSep","\r\n")
       .csv("csvFiles/students2.csv")
