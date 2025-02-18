@@ -13,7 +13,7 @@ Let us now see how to handle the encoding and encoding conversion of CSV Files u
 We will be looking about a couple of most commonly used csv encodings.
 
 ### How to safely read the files that are encoded?
-If you know the encoding of the csv file, then we can directly apply that, else we can apply another encoding which `UTF-8` which is capable of supporting multiple languages nad special characters.
+If you know the encoding of the csv file, then we can directly apply that, else we can apply `UTF-8` which is capable of supporting multiple languages nad special characters.
 
 Assume, we have a csv file which is UTF-8 encoded. 
 
@@ -92,7 +92,7 @@ Different Encodings are
 - Windows-1252; Encoding used for Western European Languages
 
 ### Summary
-- In this article, we have seen that what happens if the files are not read with correct encodings. There might be data loss or data representation of data.
+- In this article, we have seen what happens if the files are not read with correct encodings. There might be data loss or data representation of data.
 - We have also seen about how to read the files, with the specified and appropriate encoding so that the data is interpreted correctly.
 
 ### References
