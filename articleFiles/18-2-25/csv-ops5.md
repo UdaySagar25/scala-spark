@@ -30,7 +30,7 @@ dfDelimiter.show(truncate = false)
 **Output**
 ```text
 +----+--------+-----+-------------------------------------+
-|Roll|Name    |Marks| Dialouge                            |
+|Roll|Name    |Marks| Dialogue                        |
 +----+--------+-----+-------------------------------------+
 |1   |Ajay    |55   |He said "good morning" to the teacher|
 |2   |Bharghav|63   |This is the "locker" in the country  |
@@ -51,7 +51,7 @@ val dfDelimiter1 = spark.read
 **Output**
 ```text
 +----+--------+-----+--------------------------------------+
-|Roll|Name    |Marks| Dialouge                             |
+|Roll|Name    |Marks| Dialogue                         |
 +----+--------+-----+--------------------------------------+
 |1   |Ajay    |55   |"He said good morning" to the teacher"|
 |2   |Bharghav|63   |"This is the locker" in the country"  |
@@ -72,7 +72,7 @@ dfDelimiter2.show(truncate = false)
 **Output**
 ```text
 +----+--------+-----+---------------------------------------+
-|Roll|Name    |Marks| Dialouge                              |
+|Roll|Name    |Marks| Dialogue                          |
 +----+--------+-----+---------------------------------------+
 |1   |Ajay    |55   |"He said "good morning" to the teacher"|
 |2   |Bharghav|63   |"This is the "locker" in the country"  |

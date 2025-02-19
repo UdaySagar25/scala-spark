@@ -69,7 +69,7 @@ val cutOff=90.0
 
     marksDf.coalesce(1).write.partitionBy("Pass/Fail")
       .option("header","true").mode("overwrite")
-      .csv("file:///C:\\Users\\krisa\\OneDrive\\Desktop\\spark-articles\\csvFiles\\resutls")
+      .csv("file:///C:\\Users\\krisa\\OneDrive\\Desktop\\spark-articles\\csvFiles\\results")
 ```
 **Output**
 List of Passed students
@@ -112,4 +112,4 @@ In this article, we have seen:
 
 ### References  
 - [Write Spark dataframe as CSV with partitions](https://stackoverflow.com/questions/37509932/write-spark-dataframe-as-csv-with-partitions)
-- [Dataframe Repartitions](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.DataFrame.repartition.html)
+- [Dataframe Repartition](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.DataFrame.repartition.html)

@@ -108,7 +108,7 @@ In this article, we have seen that :
 
 ### References
 - [Spark from_json with dynamic schema](https://stackoverflow.com/questions/49088401/spark-from-json-with-dynamic-schema)
-- [Spark JSON documentaion](https://spark.apache.org/docs/3.5.4/sql-data-sources-json.html)
+- [Spark JSON documentation](https://spark.apache.org/docs/3.5.4/sql-data-sources-json.html)
 - [How to read json with schema in spark dataframes/spark sql?](https://stackoverflow.com/questions/39355149/how-to-read-json-with-schema-in-spark-dataframes-spark-sql)
 
 

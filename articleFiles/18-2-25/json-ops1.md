@@ -159,6 +159,6 @@ In this article, we have seen:
 - How to read a multiline and nested JSON file.
 
 ### References
-- [Spark JSON documentaion](https://spark.apache.org/docs/3.5.4/sql-data-sources-json.html)
+- [Spark JSON documentation](https://spark.apache.org/docs/3.5.4/sql-data-sources-json.html)
 - [Reading JSON files](https://docs.databricks.com/en/query/formats/json.html)
 - [Reading Json file using Apache Spark](https://stackoverflow.com/questions/40212464/reading-json-file-using-apache-spark)
