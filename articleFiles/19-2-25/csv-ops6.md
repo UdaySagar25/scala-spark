@@ -1,4 +1,4 @@
-### Partition and Coalesce
+### Partition 
 
 As much as we want the data to be in a single file, sometimes we feel that data should have been segregated based on a condition so that it would be easy to find records.
 
