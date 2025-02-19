@@ -108,6 +108,7 @@ In this article, we have seen:
 - How is it used to distribute the records of csv file into multiple files.
 - How can a clause be used to distribute the data and write into different csv files.
 - What is `repartition()` and why it is used.
+- What are the features of `repartition()`
 
 ### References  
 -[Write Spark dataframe as CSV with partitions](https://stackoverflow.com/questions/37509932/write-spark-dataframe-as-csv-with-partitions)

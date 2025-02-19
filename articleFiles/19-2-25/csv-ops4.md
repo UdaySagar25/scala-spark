@@ -1,7 +1,7 @@
 ## Writing CSV Files in Spark
 
 
-Until now, we have looked in to various ways to read a csv file, defining the schema before reading the file, selecting only fields that are required to answer the problem statement.
+Until now, we have looked in to various ways to read a csv file, explicitly defining custom schema to read a csv file, selecting only fields that are required to answer the problem statement.
 Now let us look into ways to write a csv file in spark. We will also look into potential challenges and try to find a way to solve them.
 
 ### How can I write a dataframe in to a csv file?
