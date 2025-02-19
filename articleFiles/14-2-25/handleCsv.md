@@ -8,6 +8,8 @@ Let us now look into handling CSV data using spark.
 
 ### How to load csv files in spark framework?
 To load the csv files in spark framework, we use `spark.read`, followed by `.option()` and `.csv(filepath)`.
+
+Consider the csv file `students.csv`
 ```csv
 Roll,Name,Marks
 1,Ajay,55
@@ -91,6 +93,8 @@ headCsv.show()
 
 ### How to handle csv files which has different delimiter?
 Assume that we have a csv file with a delimiter(;). To read the data with semicolon(;) as delimiter, we specify the delimiter in the `option("delimiter",";")` method.
+
+Consider the csv file `students1.csv`
 ```csv
 Roll;Name;Marks
 1;Ajay;55
@@ -200,5 +204,3 @@ We have also looked into
 - [Reading csv files](https://docs.databricks.com/en/query/formats/csv.html)
 - [Loading a csv file](https://stackoverflow.com/questions/29704333/spark-load-csv-file-as-dataframe)
 - [Handling csv file operations](https://spark.apache.org/docs/latest/sql-data-sources-csv.html)
-
-
