@@ -111,5 +111,5 @@ In this article, we have seen:
 - What are the features of `repartition()`
 
 ### References  
--[Write Spark dataframe as CSV with partitions](https://stackoverflow.com/questions/37509932/write-spark-dataframe-as-csv-with-partitions)
+- [Write Spark dataframe as CSV with partitions](https://stackoverflow.com/questions/37509932/write-spark-dataframe-as-csv-with-partitions)
 - [Dataframe Repartitions](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.DataFrame.repartition.html)
