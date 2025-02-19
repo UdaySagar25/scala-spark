@@ -144,7 +144,7 @@ In this article,
 ### Related Articles
 - [Handle csv files](handleCsv.md)
 - [Working with corrupt csv files](csvCorrput.md)
-- [csv file opeartions](csvOps1.md)
+- [CSV file operations](csvOps1.md)
 
 ### References
 - [Provide Schema while reading csv files as a dataframe in Spark](https://stackoverflow.com/questions/39926411/provide-schema-while-reading-csv-file-as-a-dataframe-in-scala-spark)
