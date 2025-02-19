@@ -3,9 +3,9 @@
 created on: 14-2-2025
 
 ### How to define the schema of a csv file?
-For any given csv file, spark automatically understands the schema with the help of the flag `infershcema`.
+For any given csv file, spark automatically understands the schema with the help of the flag `inferSchema`.
 
-Let us take the below csv file as an example
+Consider the csv file `students.csv`
 ```csv
 Roll,Name,Marks
 1,Ajay,55
@@ -14,7 +14,7 @@ Roll,Name,Marks
 4,Kamal,75
 5,Sohaib,70
 ```
-To define the schema, we use the flag `inferschema`
+To define the schema, we use the flag `inferSchema`
 ```scala
 val df=spark.read.option("inferschema","true").option("header","true")
       .csv("csvFiles/students.csv")
