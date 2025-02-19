@@ -10,7 +10,7 @@ Let us now look at the scenario of handling data with different date and time fo
 
 **Example csv file:** 
 
-**File name:** studentDate.csv
+Consider the csv file `studentDate.csv`
 ```csv
 ID,Name,LongValue,DOB, Submit Time,DoubleMarks
 1,"Ajay",10,"2010:01:01","2025-02-17 12:30:45",92.75
@@ -135,7 +135,7 @@ root
 
 Now assume that we have another data file with different style of date and time entry.
 
-csv file:
+Consider the csv file `studentDate2.csv`
 ```csv
 ID,Name,LongValue,DOB,Submit Time,DoubleMarks
 1,"Ajay",10,"01/01/2010","2025/02/17 12:30:45",92.75
