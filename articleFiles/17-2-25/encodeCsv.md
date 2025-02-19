@@ -15,7 +15,7 @@ We will be looking about a couple of most commonly used csv encodings.
 ### How to safely read the files that are encoded?
 If you know the encoding of the csv file, then we can directly apply that, else we can apply `UTF-8` which is capable of supporting multiple languages nad special characters.
 
-Assume, we have a csv file which is UTF-8 encoded. 
+Consider the csv file `empSalary.csv` which is UTF-8 encoded. 
 
 ```csv
 Name, Nationality, Salary
@@ -31,7 +31,7 @@ Let us try to see what happens if the file is not read with correct encoding.
 val encodeDf= spark.read.option("header","true")
       .option("inferSchema","true")
       .option("encoding","Windows-1252")
-      .csv("csvFiles/satScores.csv")
+      .csv("csvFiles/empSalary.csv")
     
 encodeDf.show()
 encodeDf.printSchema()
@@ -43,7 +43,7 @@ encodeDf.printSchema()
 +---------------+------------+-------+
 |JÃ¼rgen MÃ¼ller|     Germany| Â£1400|
 | Ã‰lodie Durand|      France| Â£1450|
-|JosÃ© GarcÃ­a|       Spain| Â£1395|
+|   JosÃ© GarcÃ­a|       Spain| Â£1395|
 |    Ã…sa BjÃ¶rk|      Sweden| Â£1500|
 +---------------+------------+-------+
 
@@ -62,7 +62,7 @@ Let us try to see how the output is when the encoding is changed to UTF-8
 val encodeDf1= spark.read.option("header","true")
       .option("inferSchema","true")
       .option("encoding","UTF-8")
-      .csv("csvFiles/satScores.csv")
+      .csv("csvFiles/empSalary.csv")
     
 encodeDf1.show()
 encodeDf1.printSchema()
