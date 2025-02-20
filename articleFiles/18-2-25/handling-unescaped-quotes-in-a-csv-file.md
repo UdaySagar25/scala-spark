@@ -3,7 +3,7 @@
 Assume we encounter few source data files, and the records in those files contain unescaped quotes. For example, "She said, "hello" to everyone".
 Here the whole sentence is said to be one field value, but the inner quotations might cause a problem when parsing the data. How to deal with them?
 
-### How to read csv files, if there unescaped quotes in a field?
+### How to read csv files, if there are unescaped quotes in a field?
 Consider the csv file `delimiter.csv`
 ```csv 
 Roll,Name,Marks, Dialouge
@@ -91,8 +91,8 @@ So we need to make sure that we are using the correct `unescapedQuoteHandling` o
 
 
 ### Summary
-- In this article we have seen 
-- Wat can be the challenges  with reading data with unescaped quotes.
+In this article we have seen:
+- What can be the challenges while reading data with unescaped quotes.
 - How spark methods can help us with dealing the columns with unescaped quotes.
 - What are the pros and cons for each of the options of `unescapedQuoteHandling`
 
