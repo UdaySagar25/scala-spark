@@ -124,6 +124,35 @@ Let's answer that question as well.
 
 ### How to read data from a nested JSON file?
 Similar to reading the multiline JSON file, here as well we use `option("multiLine","true")` to read nested JSON files.
+
+Consider the JSON file `studentDetails.json`
+```json
+[
+  {
+    "Roll": 1,
+    "Name": "Ajay",
+    "Marks": 55,
+    "Contact": [
+      {
+        "Mail": "ajay@Mail.com",
+        "Mobile": "8973 113"
+      }
+    ]
+  },
+  {
+    "Roll": 2,
+    "Name": "Bharghav",
+    "Marks": 63,
+    "Contact": [
+      {
+        "Mail": "bharghav@Mail.com",
+        "Mobile": "9876 205"
+      }
+    ]
+  },
+...
+```
+
 ```scala
 val stdDetails=spark.read.option("multiLine","true").json("jsonFiles/studentDetails.json")
 
