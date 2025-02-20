@@ -64,14 +64,15 @@ Roll,Name,DOB,Submit Time,Final Marks
 Assume we want to segregate the students who got more marks than the cutoff mark in the exam. To do this, we will use `when()` and `otherwise()` methods.
 ```scala
 val cutOff=90.0
-    val marksDf=df.withColumn("Pass/Fail",
-      when(col("Final Marks")<cutOff,"Pass").otherwise("Fail"))
+val marksDf=df.withColumn("Pass/Fail",
+        when(col("Final Marks")<cutOff,"Pass").otherwise("Fail"))
 
-    marksDf.coalesce(1).write.partitionBy("Pass/Fail")
-      .option("header","true").mode("overwrite")
-      .csv("file:///C:\\Users\\krisa\\OneDrive\\Desktop\\spark-articles\\csvFiles\\results")
+marksDf.coalesce(1).write.partitionBy("Pass/Fail")
+        .option("header","true").mode("overwrite")
+        .csv("file:///C:\\Users\\krisa\\OneDrive\\Desktop\\spark-articles\\csvFiles\\results")
 ```
 **Output**
+
 List of Passed students
 ```csv
 Roll,Name,Age,DOB,Submit Time,Final Marks
@@ -94,7 +95,9 @@ Roll,Name,Age,DOB,Submit Time,Final Marks
 ```
 
 There is another way to partition the data, using `repartition()`. It is used to optimize the data distribution across the clusters.
-It is used to define the number of partitions and **randomly** distributes data across the partitions.
+It is used to define the number of partitions and it **randomly** distributes data across the partitions.
+It is commonly used when increasing the number of partitions to improve processing speed and is usually applied on large-scale data where processing takes time.
+Properly setting the number of partitions, can significantly enhance the performance of distributed computations.
 
 ```scala
 df.repartition(5).write
