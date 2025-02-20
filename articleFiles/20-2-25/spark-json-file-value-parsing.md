@@ -91,7 +91,7 @@ backslash.show(truncate=false)
 |I am in a "Safe" room       |55   |Ajay    |1   |
 |Please don't 	go there     |63   |Bharghav|2   |
 |The world is so "beautiful!"|60   |Chaitra |3   |
-|I like 	ice-cream        |75   |Kamal   |4   |
+|I like 	ice-cream          |75   |Kamal   |4   |
 |Let's go on a vacation      |70   |Sohaib  |5   |
 +----------------------------+-----+--------+----+
 ```
@@ -156,6 +156,22 @@ But standard JSON reads the decimal values as Double which will affect the data 
 
 ### How to parse float data value in JSON files?
 Spark has the configuration `prefersDecimal` which allows the data to be read in its original form, rather than changing its data type.
+
+Consider the JSON file `floatMarks.json`
+```json
+[
+  {
+    "Roll": 1,
+    "Name": "Ajay",
+    "Marks": 55.875454
+  },
+  {
+    "Roll": 2,
+    "Name": "Bharghav",
+    "Marks": 63.25451
+  },
+...
+```
 ```scala
 val floatMarks=spark.read.option("multiLine","true")
       .option("inferSchema","true")
