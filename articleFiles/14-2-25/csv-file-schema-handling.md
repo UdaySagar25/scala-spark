@@ -142,9 +142,9 @@ In this article,
 - We have seen how `enforceSchema` flag works in defining the schema.
 
 ### Related Articles
-- [Handle csv files](handle-csv.md)
-- [Working with corrupt csv files](csv-corrupt.md)
-- [CSV file operations](csv-ops1.md)
+- [Handle csv files](handling-csv-format-files.md)
+- [Working with corrupt csv files](handling-corrupt-values-in-csv-data-files.md)
+- [CSV file operations](csv-file-operations.md)
 
 ### References
 - [Provide Schema while reading csv files as a dataframe in Spark](https://stackoverflow.com/questions/39926411/provide-schema-while-reading-csv-file-as-a-dataframe-in-scala-spark)

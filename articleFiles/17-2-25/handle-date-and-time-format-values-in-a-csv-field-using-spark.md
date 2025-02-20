@@ -53,7 +53,7 @@ root
 ```
 The above output is of no use to us, as all the necessary is inferred as String, which will make it difficult with further analysis.
 
-To tackle this, We make sure that spark infers the schema automatically. You can refer the [Handling schema of a csv file](csvOps2.md) on how to use the flag `inferSchema` to define the schema of a csv file.
+To tackle this, We make sure that spark infers the schema automatically. You can refer the [Handling schema of a csv file](csv-file-schema-handling.md) on how to use the flag `inferSchema` to define the schema of a csv file.
 
 ## How to correctly define the data type of date and time stamp column in csv file?
 
@@ -191,7 +191,7 @@ As we can see, spark is able to read the csv file with different date and timest
 - We have also understood the behaviour of data if the wrong format is given.
 
 ### Related Articles
-- [Handling schema of a csv file](csvOps2.md)
+- [Handling schema of a csv file](csv-file-schema-handling.md)
 
 ### References
 - [CSV Spark documentation](https://spark.apache.org/docs/3.5.4/sql-data-sources-csv.html)
