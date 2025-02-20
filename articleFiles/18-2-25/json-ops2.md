@@ -25,7 +25,7 @@ We have `studentMarks.json` file with us.
 When spark automatically infers the schema of the JSON file, there is a possibility that the data type might be wrongly interpreted. 
 For example:
 ```scala
-val stdMarks=spark.read.option("multiline","true")
+val stdMarks=spark.read.option("multiLine","true")
       .option("inferSchema","true")
       .json("jsonFiles/studentMarks.json")
 
@@ -52,7 +52,7 @@ val ownSchema = StructType(Seq(
       StructField("Double Marks", DoubleType,true)
     ))
 
-    val schMarks=spark.read.option("multiline","true").schema(ownSchema)
+    val schMarks=spark.read.option("multiLine","true").schema(ownSchema)
       .json("jsonFiles/studentMarks.json")
 
     schMarks.printSchema()
@@ -84,7 +84,7 @@ val sch = StructType(Seq(
         StructField("Mobile", StringType, true)
       )), true)
     ))
-val nestedSchema=spark.read.option("multiline","true")
+val nestedSchema=spark.read.option("multiLine","true")
   .schema(sch).json("jsonFiles/studentDetails.json")
 
 nestedSchema.printSchema()

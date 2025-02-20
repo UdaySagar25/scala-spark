@@ -66,7 +66,7 @@ df.show()
 ### How to read the schema of the dataframe?
 To read the schema of the dataframe, use the `.printSchema()` method.
 ```scala
-// prints the shcema of the dataframe
+// prints the schema of the dataframe
 df.printSchema()
 ```
 **Output**

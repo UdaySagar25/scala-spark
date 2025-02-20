@@ -8,7 +8,7 @@ object jsonOps2 {
       .master("local[*]").getOrCreate()
 
 
-    val stdMarks=spark.read.option("multiline","true")
+    val stdMarks=spark.read.option("multiLine","true")
       .option("inferSchema","true")
       .json("jsonFiles/studentMarks.json")
 
@@ -22,7 +22,7 @@ object jsonOps2 {
       StructField("Double Marks", DoubleType,true)
     ))
 
-    val schMarks=spark.read.option("multiline","true").schema(ownSchema)
+    val schMarks=spark.read.option("multiLine","true").schema(ownSchema)
       .json("jsonFiles/studentMarks.json")
 
     schMarks.printSchema()
@@ -37,7 +37,7 @@ object jsonOps2 {
       )), true)
     ))
 
-    val nestedSchema=spark.read.option("multiline","true")
+    val nestedSchema=spark.read.option("multiLine","true")
       .schema(sch).json("jsonFiles/studentDetails.json")
 
     nestedSchema.printSchema()

@@ -16,7 +16,7 @@ Roll,Name,Marks
 ```
 To define the schema, we use the flag `inferSchema`
 ```scala
-val df=spark.read.option("inferschema","true").option("header","true")
+val df=spark.read.option("inferSchema","true").option("header","true")
       .csv("csvFiles/students.csv")
 
 df.show()
@@ -142,9 +142,9 @@ In this article,
 - We have seen how `enforceSchema` flag works in defining the schema.
 
 ### Related Articles
-- [Handle csv files](handleCsv.md)
-- [Working with corrupt csv files](csvCorrput.md)
-- [CSV file operations](csvOps1.md)
+- [Handle csv files](handle-csv.md)
+- [Working with corrupt csv files](csv-corrupt.md)
+- [CSV file operations](csv-ops1.md)
 
 ### References
 - [Provide Schema while reading csv files as a dataframe in Spark](https://stackoverflow.com/questions/39926411/provide-schema-while-reading-csv-file-as-a-dataframe-in-scala-spark)

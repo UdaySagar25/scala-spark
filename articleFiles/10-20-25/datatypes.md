@@ -190,7 +190,7 @@ What we have covered ?
 
 ### Related Articles
 - [Understanding Dataframes](dataframe.md)
-- [Dataframe Column Operations](DFColumn.md)
+- [Dataframe Column Operations](df-column.md)
 
 ## References:
 - [Spark Data Types](https://spark.apache.org/docs/3.5.3/sql-ref-datatypes.html)
