@@ -5,7 +5,7 @@ created on: 10-2-2025
 Dataframe column manipulations on spark dataframes, are operations that are done on dataframe columns which help in cleaning the data, feature engineering and transforming the data for better analysis.
 
 Let us now look into what are the column operations that can be done on a spark dataframe.
-Firstly, let's start by creating a dataframe. To know more about dataframe creation, [Refer this link](dataframe.md)
+Firstly, let's start by creating a dataframe. To know more about dataframe creation, [Refer this link](@/docs/spark/dataframe.md)
 
 ```scala
 import spark.implicits._
@@ -161,7 +161,7 @@ What have we covered?
 - Creating a new column by applying conditions on existing columns
 
 ### Related Articles
-- [Understanding dataframes](dataframe.md)
+- [Understanding dataframes](@/docs/spark/dataframe.md)
 
 ### References
 - [Getting Started with dataframes](https://www.databricks.com/spark/getting-started-with-apache-spark/dataframes)

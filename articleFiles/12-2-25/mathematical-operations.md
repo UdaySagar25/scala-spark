@@ -6,7 +6,7 @@ In this article, we are going to see different math operations and its applicati
 These math operations generally include methods like, addition, subtraction, multiplication, division, average, floor and ceil values and many more.
 Let us now look into each of these mathematical operations and how they are applied on dataframes.
 
-We'll be using the below dataframe which we already created for DataType operations [Refer this link on creating a dataframe](datatypes.md)
+We'll be using the below dataframe which we already created for DataType operations [Refer this link on creating a dataframe](@/docs/spark/datatypes.md)
 
 ```text
 +----+--------+-----------+-----------+------------+
@@ -171,7 +171,7 @@ We have looked into various Mathematical Operations in a Spark Dataframe. We hav
 and also saw how aggregate functions are applied using `.agg()` method inside which, we apply various aggregation methods.
 
 ### Related Articles
-- [Creating a Dataframe](datatypes.md)
+- [Creating a Dataframe](@/docs/spark/datatypes.md)
 
 ### References
 - [Spark Math Operations](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/functions.html#math-functions)

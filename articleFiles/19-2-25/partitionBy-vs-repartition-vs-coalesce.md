@@ -70,8 +70,8 @@ In this article, we have seen:
 - What are the advantages and disadvantages of partitionBy, repartition and coalesce.
 
 ### Related articles
-- [Writing CSV Files in Spark](writing-csv-files-in-spark.md)
-- [Writing CSV files using partitions](writing-csv-files-using-partitions.md)
+- [Writing CSV Files in Spark](@/docs/spark/writing-csv-files-in-spark.md)
+- [Writing CSV files using partitions](@/docs/spark/writing-csv-files-using-partitions.md)
 
 ### References
 - [Spark - repartition() vs coalesce()](https://stackoverflow.com/questions/31610971/spark-repartition-vs-coalesce)

@@ -196,8 +196,8 @@ keyValue.show(truncate=false)
 - We also got to know what dataframe array operations can be done and how do they help us.
 
 ### Related Articles.
-- [Understanding dataframes](dataframe.md)
-- [Spark data types](datatypes.md)
+- [Understanding dataframes](@/docs/spark/dataframe.md)
+- [Spark data types](@/docs/spark/datatypes.md)
 
 ### References
 - [Spark Arrays](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.functions.array.html)

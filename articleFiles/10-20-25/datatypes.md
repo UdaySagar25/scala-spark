@@ -189,8 +189,8 @@ What we have covered ?
 - ComplexType ( Arrays )
 
 ### Related Articles
-- [Understanding Dataframes](dataframe.md)
-- [Dataframe Column Operations](dataframe-column-manipulations.md)
+- [Understanding Dataframes](@/docs/spark/dataframe.md)
+- [Dataframe Column Operations](@/docs/spark/dataframe-column-manipulations.md)
 
 ## References:
 - [Spark Data Types](https://spark.apache.org/docs/3.5.3/sql-ref-datatypes.html)

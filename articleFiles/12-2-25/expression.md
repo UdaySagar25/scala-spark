@@ -6,7 +6,7 @@ Expression are used in various scenarios. They are used in select, filter,agg et
 
 In this article we shall be looking at handling expressions when they are used in combination with select, filter and agg. 
 
-Let's use the previous dataframe that we used for math oeprations. [Refer this article](datatypes.md)
+Let's use the previous dataframe that we used for math oeprations. [Refer this article](@/docs/spark/datatypes.md)
 ```text
 +----+--------+-----------+-----------+------------+
 |Roll|    Name|Final Marks|Float Marks|Double Marks|
@@ -101,7 +101,7 @@ In the article, we have seen,
 - How to use custom expression using `expr()` method
 
 ### Related Articles
-[Dataframes](datatypes.md)
+[Dataframes](@/docs/spark/datatypes.md)
 
 ### References
 - [Spark Expr()](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.functions.expr.html)

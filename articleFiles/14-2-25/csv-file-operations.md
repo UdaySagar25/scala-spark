@@ -134,7 +134,7 @@ In this article, we have seen
 - What happens if the csv file is not read correctly with proper line separator.
 
 ### Related articles
-- [Handling CSV files in spark](handling-csv-format-files.md)
+- [Handling CSV files in spark](@/docs/spark/handling-csv-format-files.md)
 
 ### References 
 - [How to read multiline csv file as spark dataframe](https://learn.microsoft.com/en-us/answers/questions/1319024/how-to-read-this-multiline-csv-file-as-a-spark-dat)

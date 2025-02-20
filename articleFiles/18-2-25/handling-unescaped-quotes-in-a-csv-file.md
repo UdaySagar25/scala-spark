@@ -97,8 +97,8 @@ So we need to make sure that we are using the correct `unescapedQuoteHandling` o
 - What are the pros and cons for each of the options of `unescapedQuoteHandling`
 
 ### Related articles
-- [CSV file operations](csv-file-operations.md)
-- [CSV file schema handling](csv-file-schema-handling.md)
+- [CSV file operations](@/docs/spark/csv-file-operations.md)
+- [CSV file schema handling](@/docs/spark/csv-file-schema-handling.md)
 
 ### References
 - [Spark CSV documentation](https://spark.apache.org/docs/3.5.4/sql-data-sources-csv.html)

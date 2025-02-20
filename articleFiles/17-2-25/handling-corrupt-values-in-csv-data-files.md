@@ -105,9 +105,9 @@ corruptDf.show()
 Since the last record had a corrupted value, only that row has been deleted. The first row's last column value is a Null value, so that is not deleted.
 
 ### How to replace the null values and corrupt values?
-To replace the null values, we use the dataframe's null value methods. To know how to implement those methods, [Refer this article](nullValues.md)
+To replace the null values, we use the dataframe's null value methods. To know how to implement those methods, [Refer this article](@/docs/spark/null-values.md)
 
-To save the updates done on the csv file, [Refer this article on how to save csv file](handling-csv-format-files.md)
+To save the updates done on the csv file, [Refer this article on how to save csv file](@/docs/spark/handling-csv-format-files.md)
 
 ### Summary
 In this article we have seen
@@ -115,8 +115,8 @@ In this article we have seen
 - How to create a column that stores the details of the rows with null values
 
 ### Related articles
-- [Handling Null Values](null-values.md)
-- [Handling CSV files](handling-csv-format-files.md)
+- [Handling Null Values](@/docs/spark/null-values.md)
+- [Handling CSV files](@/docs/spark/handling-csv-format-files.md)
 
 ### Refernces
 - [How to handle corrput csv files?](https://spark.apache.org/docs/latest/sql-data-sources-csv.html)
