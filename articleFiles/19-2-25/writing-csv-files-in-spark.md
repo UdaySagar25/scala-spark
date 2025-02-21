@@ -6,7 +6,7 @@ Now let us look into ways to write a csv file in spark. We will also look into p
 
 ### How can I write a dataframe in to a csv file?
 Spark provides us with methods that convert the dataframe format of data into csv file. 
-The usual way of creating a csv file is that Spark creates a directory first and then splits the data into creating multiple csv files.
+The usual way of creating a csv file is that Spark creates a directory first and then splits the data to create multiple csv files.
 
 Consider we have a dataframe which we want to write into a csv file.
 ```text
@@ -49,6 +49,7 @@ Roll,Name,Final Marks,Float Marks,Double Marks
 ```
 When we run the above spark command, a single csv file with all the records in it, is created.
 `coalesce(n)` helps in creating the desired number of csv files. The maximum number of splits we can create out of a dataframe is the total number of records it holds.
+The default value for coalesce is **coalesce(1)** which will write the data to 1 csv file.
 
 ### How to update the already existing csv file?
 Sometimes, we might want to update the output file,folder with new data. But spark doesn't allow that and throws an error when executed. How do we tackle this situation?
@@ -58,6 +59,7 @@ df.coalesce(2).write.format("csv")
   .save("file:///C:\\Users\\krisa\\OneDrive\\Desktop\\spark-articles\\csvFiles\\outputFiles1")
 ```
 When the above spark code is executed, spark will raise an error saying that the file path already exists.
+
 **Output**
 ```text
 path file:/C:/Users/krisa/OneDrive/Desktop/spark-articles/csvFiles/outputFiles1 already exists.
@@ -70,6 +72,7 @@ df.coalesce(2).write.format("csv")
       .save("file:///C:\\Users\\krisa\\OneDrive\\Desktop\\spark-articles\\csvFiles\\outputFiles1")
 ```
 Now we'll get 2 csv files created in the folder, overwriting the already existing list of files.
+
 **Output**
 ```csv
 Roll,Name,Final Marks,Float Marks,Double Marks
@@ -112,8 +115,9 @@ df.coalesce(1).write.format("csv")
       .mode("append")
       .save("file:///C:\\Users\\krisa\\OneDrive\\Desktop\\spark-articles\\csvFiles\\customDelimiter")
 ```
-**Output**
 The below csv file is created and stored in the `customDelimiter` along with the other files.
+
+**Output**
 ```csv
 Roll;Name;Final Marks;Float Marks;Double Marks
 1;Ajay;300;55.5;92.75
@@ -125,7 +129,7 @@ Roll;Name;Final Marks;Float Marks;Double Marks
 
 ### Summary
 In this article, we have seen:
-- How can we write a csv file from a spark dataframe.
+- How to write a spark dataframe into CSV files.
 - What is the default behaviour of spark in writing csv files.
 - How to write the spark dataframe into a single csv file.
 - How to overwrite the files of an existing directory.

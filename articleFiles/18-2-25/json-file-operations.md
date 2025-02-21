@@ -1,7 +1,7 @@
 ## JSON file operations
 
 Assume we have a JSON file containing details of students and their marks in the recent series of exams. We want to read that in a specific data type.
-To this,we have to define the schema explicitly and then put it on top of the JSON file.
+To do this,we have to define the schema explicitly and then put it on top of the JSON file.
 We have `studentMarks.json` file with us.
 ```json
 [
@@ -72,7 +72,7 @@ We can see that the data types of all the columns have been corrected.
 ### How can I define custom schema for a nested JSON file?
 Similar to defining custom schema for regular JSON file, for nested JSON file, we define the schema in a nested way. 
 During our previous discussion, we worked on a nested JSON file, we will be defining a custom schema for that.  
-Refer this article [Handling JSON files in Spark](jsonOps1.md)
+Refer this article [Handling JSON files in Spark](@/docs/spark/handling-json-files-in-spark.md)
 
 ```scala
 val sch = StructType(Seq(
@@ -104,7 +104,7 @@ root
 In this article, we have seen that :
 - When spark reads JSON files using schema inference, it may lead to data type misinterpretation
 - How custom schema definition can help us tackle the above problem
-- How to define schema for a nested JSON file; define a structured schema using `StructType` inside `StructField`.
+- How to define schema for a nested JSON file; define a structured schema using `StructField` inside `StructType`.
 
 ### References
 - [Spark from_json with dynamic schema](https://stackoverflow.com/questions/49088401/spark-from-json-with-dynamic-schema)

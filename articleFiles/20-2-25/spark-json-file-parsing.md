@@ -115,6 +115,22 @@ unquote.show()
 +-----+--------+----+
 ```
 ### How can I read JSON files which has comments in it?
+Consider we have a JSON file `commentMarks.json`
+```json
+[
+  {
+    "Roll": 1,
+    "Name": "Ajay",
+    "Marks": 55   //These is the lowest score
+  },
+  {
+    "Roll": 2,
+    "Name": "Bharghav",
+    "Marks": 63
+  },
+...
+```
+
 In few cases, the authors of JSON files tend to write a comment about the data, helping others to understand the data better. But when we try to read those JSON file, we get an error.
 To handle this situation, we will use `allowComments` option. This ignores the comments and reads the data.
 
