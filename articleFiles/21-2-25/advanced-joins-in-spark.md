@@ -95,6 +95,9 @@ In this article, we have seen:
 - Cross Join(Cartesian Product), Left Semi Join, Left Anti Join.
 - How these joins help us with efficient data extraction.
 
+### Related Articles
+- [Essential Joins in Spark](@/docs/spark/essential-joins-in-spark.md)
+
 ### References
 - [Left Semi Join](https://learn.microsoft.com/en-us/kusto/query/join-leftsemi?view=microsoft-fabric)
 - [Joins](https://docs.snowflake.com/en/sql-reference/constructs/join)
