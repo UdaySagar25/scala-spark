@@ -24,7 +24,7 @@ To write the above dataframe into a csv file, we use the method `.write`, follow
 ```scala
 df.write.format("csv")
   .option("header","true")
-  .save("file:///C:\\Users\\krisa\\OneDrive\\Desktop\\spark-articles\\csvFiles\\outputFiles1")
+  .save("csvFiles\\studentData")
 ```
 
 **Note:** "file:///" is used as a prefix before the path, which will refer to the files in the local system. This is used to write files explicitly on the local system.
@@ -39,7 +39,7 @@ Spark has a method `coalesce()` which will help us define the number of csv file
 ```scala
 df.coalesce(1).write.format("csv")
   .option("header","true")
-  .save("file:///C:\\Users\\krisa\\OneDrive\\Desktop\\spark-articles\\csvFiles\\singleFile")
+  .save("csvFiles\\combinedStudentData")
 ```
 **Output**
 ```csv
@@ -57,22 +57,22 @@ The default value for coalesce is **coalesce(1)** which will write the data to 1
 ### How to update the already existing csv file?
 Sometimes, we might want to update the output file,folder with new data. But spark doesn't allow that and throws an error when executed. How do we tackle this situation?
 ```scala
-df.coalesce(2).write.format("csv")
+df.coalesce(1).write.format("csv")
   .option("header","true")
-  .save("file:///C:\\Users\\krisa\\OneDrive\\Desktop\\spark-articles\\csvFiles\\outputFiles1")
+  .save("csvFiles\\studentData")
 ```
 When the above spark code is executed, spark will raise an error saying that the file path already exists.
 
 **Output**
 ```text
-path file:/C:/Users/krisa/OneDrive/Desktop/spark-articles/csvFiles/outputFiles1 already exists.
+path file:csvFiles/studentData already exists.
 ```
 To tackle this situation, we will use `mode("overwrite")` configuration which will overwrite the existing folder
 ```scala
-df.coalesce(2).write.format("csv")
+df.coalesce(1).write.format("csv")
       .option("header","true")
       .mode("overwrite")
-      .save("file:///C:\\Users\\krisa\\OneDrive\\Desktop\\spark-articles\\csvFiles\\outputFiles1")
+      .save("csvFiles\\studentData")
 ```
 Now we'll get 2 csv files created in the folder, overwriting the already existing list of files.
 
@@ -96,7 +96,7 @@ df.coalesce(1).write.format("csv")
       .option("header","true")
       .option("delimiter","|")
       .mode("overwrite")
-      .save("file:///C:\\Users\\krisa\\OneDrive\\Desktop\\spark-articles\\csvFiles\\customDelimiter")
+      .save("csvFiles\\customDelimiterData")
 ```
 **Output**
 ```csv
@@ -116,7 +116,7 @@ df.coalesce(1).write.format("csv")
       .option("header","true")
       .option("delimiter",";")
       .mode("append")
-      .save("file:///C:\\Users\\krisa\\OneDrive\\Desktop\\spark-articles\\csvFiles\\customDelimiter")
+      .save("csvFiles\\customDelimiterData")
 ```
 The below csv file is created and stored in the `customDelimiter` along with the other files.
 
