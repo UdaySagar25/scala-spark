@@ -2,6 +2,7 @@
 
 Assume we have a JSON file containing details of students and their marks in the recent series of exams. We want to read that in a specific data type.
 To do this,we have to define the schema explicitly and then put it on top of the JSON file.
+
 We have `studentMarks.json` file with us.
 ```json
 [
@@ -21,6 +22,7 @@ We have `studentMarks.json` file with us.
   },
 ...
 ```
+
 ### How to read a JSON file with a custom schema?
 When spark automatically infers the schema of the JSON file, there is a possibility that the data type might be wrongly interpreted. 
 For example:
