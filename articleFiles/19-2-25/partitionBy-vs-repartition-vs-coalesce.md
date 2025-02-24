@@ -8,8 +8,8 @@ partitionBy()` is used while writing data to csv files. It helps in arranging th
 The distribution of the data is done based on the value of specified column(s) 
 ```scala
 df.coalesce(1).write.partitionBy("Age")
-      .option("header","true").mode("overwrite")
-      .csv("file:///C:\\Users\\krisa\\OneDrive\\Desktop\\spark-articles\\csvFiles\\partitionFiles")
+  .option("header","true").mode("overwrite")
+  .csv("csvFiles\\combinedStudentAgeData")
 ```
 **Output**
 ```csv
@@ -41,7 +41,7 @@ This method is used to distribute the data in memory. And, the number of partiti
 ```scala
 df.repartition(5).write
   .option("header", "true").mode("overwrite")
-  .csv("file:///C:\\Users\\krisa\\OneDrive\\Desktop\\spark-articles\\csvFiles\\repartitionFiles")
+  .csv("csvFiles\\studentDataDistributed")
 ```
 The above spark command distributed the data randomly between the 5 partitions.
 
@@ -51,7 +51,8 @@ This will in-turn help with proper data analysis.
 ```scala
 df.coalesce(1).write.format("csv")
   .option("header","true")
-  .save("file:///C:\\Users\\krisa\\OneDrive\\Desktop\\spark-articles\\csvFiles\\singleFile")
+  .mode("overwrite")
+  .save("csvFiles\\studentData")
 ```
 **Output**
 ```csv
