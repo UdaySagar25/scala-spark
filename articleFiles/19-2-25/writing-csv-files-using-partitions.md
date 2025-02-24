@@ -107,11 +107,11 @@ df.repartition(5).write
 
 ### Summary
 In this article, we have seen:
-- What is `partitionBy()` method.
-- How is it used to distribute the records of csv file into multiple files.
-- How can a clause be used to distribute the data and write into different csv files.
-- What is `repartition()` and why it is used.
-- What are the features of `repartition()`
+- `partitionBy()` method.
+- How `partitionBy()` is used to distribute the records of csv file into multiple files.
+- How a clause can be used to distribute the data and write into different csv files.
+- What `repartition()` is and why it is used.
+- Features of `repartition()`
 
 ### References  
 - [Write Spark dataframe as CSV with partitions](https://stackoverflow.com/questions/37509932/write-spark-dataframe-as-csv-with-partitions)
