@@ -67,7 +67,7 @@ Since the data is tiny, it is advised to set coalesce to small number(1,2,3).
 ### Summary
 In this article, we have seen:
 - The difference scenarios where partitionBy, repartition and coalesce can be used.
-- What are the advantages and disadvantages of partitionBy, repartition and coalesce.
+- The advantages and disadvantages of partitionBy, repartition and coalesce.
 
 ### Related articles
 - [Writing CSV Files in Spark](@/docs/spark/writing-csv-files-in-spark.md)
