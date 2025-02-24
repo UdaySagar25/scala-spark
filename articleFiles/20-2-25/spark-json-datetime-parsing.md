@@ -129,7 +129,7 @@ root
 
 ### Summary
 In this article, we have looked into
-- How spark reads data that is in the date and timestamp format.
+- Reading JSON files where data that is in the date and timestamp format.
 - Steps that will correctly parse the date and time format values.
 - Ways to read date and timestamps of formats which are different from the standard format.
 
