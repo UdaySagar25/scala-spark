@@ -170,10 +170,10 @@ When `allowComments` is set to true, spark ignores the comments and read the JSO
 
 
 ### Summary
-In this article, we have seen:
-- What are the common issues faced while reading a JSON file.
-- How to read JSON files when the field names are enclosed in single quotes(' ') and not enclosed.
-- How to read JSON files when there are comments in the files.
+In this article, we have looked into:
+- Common issues faced while reading a JSON file.
+- Reading JSON files when the field names are enclosed in single quotes(' ') and not enclosed.
+- Reading JSON files when there are comments in the files.
 
 ### References
 - [Spark JSON documentation](https://spark.apache.org/docs/3.5.4/sql-data-sources-json.html)
