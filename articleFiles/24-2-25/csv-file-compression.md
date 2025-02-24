@@ -96,4 +96,7 @@ In this article, we have seen:
 - [partitionBy vs repartition vs coalesce](@/docs/spark/partitionBy-vs-repartition-vs-coalesce.md)
 
 ### References
--[Spark CSV files documentation](https://spark.apache.org/docs/3.5.4/sql-data-sources-csv.html)
+- [Spark CSV files documentation](https://spark.apache.org/docs/3.5.4/sql-data-sources-csv.html)
+- [How to save a DataFrame as compressed (gzipped) CSV?](https://stackoverflow.com/questions/40163996/how-to-save-a-dataframe-as-compressed-gzipped-csv)
+- [How to read csv.gz in azure synapse notebboks](https://learn.microsoft.com/en-us/answers/questions/1622136/how-to-read-csv-gz-in-azure-synapse-notebboks)
+- [Zip support in Apache Spark](https://stackoverflow.com/questions/28969757/zip-support-in-apache-spark/45958182#45958182)
