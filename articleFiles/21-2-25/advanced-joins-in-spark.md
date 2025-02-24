@@ -2,6 +2,7 @@
 
 In the previous article, we have explored different essential joins which help us to get a better understanding of how joins happen and are foundation to some of the advanced Spark joins.
 To refresh your memory about basic joins, refer [Essential Joins in Spark](@/docs/spark/essential-joins-in-spark.md)
+
 Now, lets dive into the next level: Advanced joins in Spark. These joins are used, when it comes to filtering data and generate cartesian product. 
 Getting to know these joins will optimize our Spark queries for better data extraction.
 
@@ -31,7 +32,7 @@ DataFrame-3
 
 ### Cross Join
 This join is also known as Cartesian Product of two dataframes. 
-In this join, each Row of left side database is mapped to each row of right side database
+In this join, each Row of left side dataframe is mapped to each row of right side dataframe
 ```scala
 val cJoin=df3.crossJoin(df2)
 cJoin.show()
