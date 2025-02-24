@@ -129,12 +129,12 @@ Roll;Name;Final Marks;Float Marks;Double Marks
 
 ### Summary
 In this article, we have seen:
-- How to write a spark dataframe into CSV files.
-- What is the default behaviour of spark in writing csv files.
-- How to write the spark dataframe into a single csv file.
-- How to overwrite the files of an existing directory.
-- How to write a csv file with a custom delimiter.
-- How to append new csv files to the existing directory.
+- Default Behavior of Spark When Writing CSV Files.
+- How we can write a spark dataframe into CSV files.
+- How we write the spark dataframe into a single csv file.
+- How we overwrite the files of an existing directory.
+- How we write a csv file with a custom delimiter.
+- How we append new csv files to the existing directory.
 
 ### References
 - [Dataframe Writer to CSV](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.DataFrameWriter.csv.html)
