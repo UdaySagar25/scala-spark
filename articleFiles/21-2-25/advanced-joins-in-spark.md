@@ -8,16 +8,16 @@ Getting to know these joins will optimize our Spark queries for better data extr
 
 Consider the below dataframes
 ```text
-DataFrame-1
-+----+--------+-----+
-|Roll|    Name|Marks|
-+----+--------+-----+
-|   1|    Ajay|   55|
-|   2|Bharghav|   63|
-|   3| Chaitra|   60|
-|   4|   Kamal|   75|
-|   5|  Sohaib|   70|
-+----+--------+-----+
+DataFrame-2
++----+----------------+---+
+|Roll|         Subject|Age|
++----+----------------+---+
+|   1|       Chemistry| 14|
+|   2|Computer Science| 15|
+|   5|    BioChemistry| 16|
+|   8|      Statistics| 14|
+|   7|   Real Analysis| 15|
++----+----------------+---+
 
 DataFrame-3
 +----+------+-------------+
