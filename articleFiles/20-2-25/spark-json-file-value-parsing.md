@@ -91,7 +91,7 @@ backslash.show(truncate=false)
 |I am in a "Safe" room       |55   |Ajay    |1   |
 |Please don't 	go there     |63   |Bharghav|2   |
 |The world is so "beautiful!"|60   |Chaitra |3   |
-|I like 	ice-cream          |75   |Kamal   |4   |
+|I like 	ice-cream    |75   |Kamal   |4   |
 |Let's go on a vacation      |70   |Sohaib  |5   |
 +----------------------------+-----+--------+----+
 ```
@@ -206,10 +206,10 @@ root
 
 ### Summary
 In this article, we have seen:
-- How can we parse JSON files which have data with leading zeros.
-- How to parse data when there are backslash-escape characters.
-- How to handle non-numeric values 
-- What is the standard behaviour of spark in parsing decimal numbers and how to handle decimal values.
+- How we parse JSON files which have data with leading zeros.
+- How we parse data when there are backslash-escape characters.
+- How we handle non-numeric values.
+- What the standard behaviour of spark in parsing decimal numbers and how to handle decimal values is.
 
 ### References
 - [Why is JSON invalid if an integer begins with a leading zero?](http://stackoverflow.com/questions/27361565/why-is-json-invalid-if-an-integer-begins-with-a-leading-zero#:~:text=JSON%20syntax%20doesn't%20allow,put%20your%20numbers%20in%20quotes.)
