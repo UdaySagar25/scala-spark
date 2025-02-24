@@ -26,6 +26,9 @@ df.write.format("csv")
   .option("header","true")
   .save("file:///C:\\Users\\krisa\\OneDrive\\Desktop\\spark-articles\\csvFiles\\outputFiles1")
 ```
+
+**Note:** "file:///" is used as a prefix before the path, which will refer to the files in the local system. This is used to write files explicitly on the local system.
+
 I am saving the csv files in `csvFiles/outputFiles1` directory. As I said earlier, the dataframe data will be split and each split will be converted into a csv file. In our case, we'll be having 5 csv files, each file storing 1 row of dataframe.
 
 But this is not the correct way of representing the above data. It might be useful to have multiple csv files created when the amount of data is huge. 
