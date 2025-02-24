@@ -26,7 +26,7 @@ Now we want to partition this based on the age of the students
 ```scala
 df.write.partitionBy("Age")
       .option("header","true").mode("overwrite")
-      .csv("file:///C:\\Users\\krisa\\OneDrive\\Desktop\\spark-articles\\csvFiles\\partitionFiles")
+      .csv("csvFiles\\studentAgeData")
 ```
 This will create subdirectories for each age that is present in the dataframe.
 
@@ -35,7 +35,7 @@ use `coalesce(1)` to put all the records into a single file.
 ```scala
 df.coalesce(1).write.partitionBy("Age")
       .option("header","true").mode("overwrite")
-      .csv("file:///C:\\Users\\krisa\\OneDrive\\Desktop\\spark-articles\\csvFiles\\partitionFiles")
+      .csv("csvFiles\\combinedStudentAgeData")
 ```
 **Output**
 ```csv
@@ -65,11 +65,11 @@ Assume we want to segregate the students who got more marks than the cutoff mark
 ```scala
 val cutOff=90.0
 val marksDf=df.withColumn("Pass/Fail",
-        when(col("Final Marks")<cutOff,"Pass").otherwise("Fail"))
+  when(col("Final Marks")<cutOff,"Pass").otherwise("Fail"))
 
 marksDf.coalesce(1).write.partitionBy("Pass/Fail")
-        .option("header","true").mode("overwrite")
-        .csv("file:///C:\\Users\\krisa\\OneDrive\\Desktop\\spark-articles\\csvFiles\\results")
+  .option("header","true").mode("overwrite")
+  .csv("csvFiles\\studentResults")
 ```
 **Output**
 
@@ -102,7 +102,7 @@ Properly setting the number of partitions, can significantly enhance the perform
 ```scala
 df.repartition(5).write
       .option("header", "true").mode("overwrite")
-      .csv("file:///C:\\Users\\krisa\\OneDrive\\Desktop\\spark-articles\\csvFiles\\repartitionFiles")
+      .csv("csvFiles\\studentDataDistributed")
 ```
 
 ### Summary
