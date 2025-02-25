@@ -7,7 +7,7 @@ In this article, let us look at concepts of groupBy and grouping sets through pr
 
 ### What is groupBy() operator?
 groupBy() is a operator that is used to group data based on columns and apply aggregation functions.
-We have already discussed various aggregation functions. To refresh your memory about aggregation, read [Mathematical Operations](@/docs/spark/mathematical-operations.md) article.
+We have already discussed various aggregation functions. To refresh your memory about aggregation, read [Mathematical Operations](@/docs/spark/advanced-mathematical-operations.md) article.
 
 Consider the dataframe
 ```text
@@ -177,7 +177,7 @@ In this article, we have seen:
 - Use case of `cube()` operator.
 
 ### Related Articles
-- [Mathematical Operations](@/docs/spark/mathematical-operations.md)
+- [Mathematical Operations](@/docs/spark/advanced-mathematical-operations.md)
 
 ### References
 - [Spark Dataframes groupBy](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.DataFrame.groupBy.html)
