@@ -87,7 +87,7 @@ This spark code splits the dataframe based on age of the students and then the f
 In this article, we have seen:
 - Types of compressions available in Spark.
 - How spark writes a dataframe into csv and compresses it.
-- How can coalesce be integrated while compressing a dataframe into csv file.
+- How coalesce can be integrated while compressing a dataframe into csv file.
 - How different types of compressions work.
 - Pros and Cons of different compression in Spark.
 

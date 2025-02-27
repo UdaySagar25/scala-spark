@@ -44,6 +44,16 @@ df.show()
 +----------+--------+----+
 ```
 Surprisingly, the default value to read the file is also set to `PERMISSIVE`. The only drawback is that the data type is changes while parsing.
+```scala
+df.printSchema()
+```
+**Output**
+```text
+root
+ |-- Marks: string (nullable = true)
+ |-- Name: string (nullable = true)
+ |-- Roll: long (nullable = true)
+```
 
 ### In the JSON, there is a field with all the null values. How to ignore that column and read the JSON file?
 Consider the JSON file `allNullValues.json`, where the values of **city** are `null`
@@ -71,7 +81,9 @@ val allNullValues=spark.read.option("multiLine","true")
    allNullValues.printSchema()
    allNullValues.show()
 ```
+
 If we execute the above spark code, null values are also printed, occupying more memory which is of no use.
+
 **Output**
 ```text
 root
@@ -91,7 +103,7 @@ root
 +-----+--------+----+----+
 ```
 
-Spark has an inbuilt configuration `dropFieldIfAllNull` which will ignore the column and read the rest of the JSON file. This configuration comes handy when We do not want unnecessary columns to be printed while working with large datasets.
+Spark has an inbuilt configuration `dropFieldIfAllNull` which will ignore the column and read the rest of the JSON file. This configuration comes handy when we do not want unnecessary columns to be printed while working with large datasets.
 ```scala
  val ignoreNullValues=spark.read.option("multiLine","true")
      .option("dropFieldIfAllNull","true")
