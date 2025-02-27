@@ -89,7 +89,7 @@ catAvg.show()
 
 ### Summary
 In this article, we have seen:
-- What List aggregation methods are .
+- What List aggregation methods are.
 - How they are useful when we are dealing with large amounts of data.
 - How we can combine aggregate operations with list aggregation methods.
 
