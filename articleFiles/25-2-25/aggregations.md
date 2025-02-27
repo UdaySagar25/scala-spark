@@ -147,7 +147,7 @@ Correlation is the value given to the relation between two attributes, and it ra
 
 ### Summary
 In this article, we have seen:
-- What aggregate functions are how they are useful.
+- What aggregate functions are and how they are useful.
 - Different aggregate functions that can be used on real time data.
 - Implementation of aggregate function using `agg()` method.
 
