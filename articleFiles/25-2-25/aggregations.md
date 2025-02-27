@@ -142,6 +142,8 @@ updatedDf.agg(corr(col("Final Marks"),col("Unit Test")).alias("Correlation")).sh
 |-0.24483685|
 +-----------+
 ```
+Correlation is the value given to the relation between two attributes, and it ranges from -1 to +1, where -1 being negatively related, +1 being positively related and 0 being no related.
+
 
 ### Summary
 In this article, we have seen:
