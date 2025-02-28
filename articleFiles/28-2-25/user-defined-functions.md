@@ -21,20 +21,20 @@ Consider the student dataframe.
 ```
 ```scala
 // create the user defined function outside main object
-object CapitalizeFirstUDF {
-  def capitalizeFirst(text: String): String = {
+object CapitalizeSecondUDF {
+  def capitalizeSecond(text: String): String = {
     if (text != null && text.nonEmpty) {
-      text.substring(0, 1).toUpperCase + text.substring(1, 2).toUpperCase + text.substring(2).toLowerCase
+      text.substring(1, 2).toUpperCase + text.substring(2).toLowerCase
     } else {
       text
     }
   }
-  val capitalizeUDF = udf(capitalizeFirst _)
+  val capitalizeUDF = udf(capitalizeSecond _)
 }
 ```
 ```scala
 // call the function with the parameter inside the main object
-val result = df.withColumn("capitalized", CapitalizeFirstUDF.capitalizeUDF(col("Name")))
+val result = df.withColumn("capitalized", CapitalizeSecondUDF.capitalizeUDF(col("Name")))
 result.show()
 ```
 **Output**
