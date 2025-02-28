@@ -32,6 +32,7 @@ But when we are dealing with large data, that is not possible. To solve this, we
 priceAfterTax.orderBy(col("Item Name")).show()
 ```
 Executing the above spark code will return the list of items arranged alphabetically.
+
 **Output**
 ```text
 +--------+-----------+----------+---+------------------+-----------------+
@@ -149,7 +150,7 @@ val multiSort=priceAfterTax.orderBy(col("Category").desc, col("Item Name").asc)
 In this article, we have seen:
 - What sorting is and why it is important.
 - Different types of sorting methods.
-- How we can sort records based on multiple rows.
+- How we can sort records based on multiple columns.
 - How we can sort records based on multiple columns where each column is sorted in a specific way.
 
 ### Related Articles
