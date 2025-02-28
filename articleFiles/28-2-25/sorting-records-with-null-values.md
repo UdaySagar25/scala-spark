@@ -3,7 +3,7 @@
 In the previous article, we have seen how sorting is done, and how efficient it is to read the data. What if we have null values in the data? Will spark read the null values and sort the data?
 We might have multiple questions like these while sorting. When dealing with big data, we will encounter records with null values, no matter how many precautions we take.
 
-In this article, we will answer all these questions with suitable solutions. Before diving in, I suggest you to revisit [Sort Functions](@/docs/spark/sort-functions.md) article just to refresh our memory on sorting functions.
+In this article, we will answer all these questions with suitable solutions. Before diving in, I suggest you to revisit [Sort Functions](@/docs/spark/sort-functions.md) article just to refresh your memory on sorting functions.
 
 Consider the student dataframe which has null values in it
 ```text
