@@ -154,9 +154,9 @@ In this article, we have seen
 
 ### Related Articles
 - [User Defined Functions](@/docs/spark/user-defined-functions.md)
-- [SparkSQL: How to deal with null values in user defined function?](https://stackoverflow.com/questions/32357164/sparksql-how-to-deal-with-null-values-in-user-defined-function)
 
 ### References 
+- [SparkSQL: How to deal with null values in user defined function?](https://stackoverflow.com/questions/32357164/sparksql-how-to-deal-with-null-values-in-user-defined-function)
 - [Spark UDF error - Schema for type Any is not supported](https://stackoverflow.com/questions/37392900/spark-udf-error-schema-for-type-any-is-not-supported)
 - [Pass multiple columns in UDF](https://stackoverflow.com/questions/42540169/pyspark-pass-multiple-columns-in-udf)
 - [Spark UDF documentation](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.functions.udf.html)
