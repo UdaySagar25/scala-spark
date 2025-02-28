@@ -70,7 +70,7 @@ nestedDf.coalesce(1).write
 ```
 We can see that the JSON object has been created with nested JSON objects.
 
-### How can write a JSON file in the existing path?
+### How can I write a JSON file in the existing path?
 By default, if we give a file path which already exists during file write, Spark session will throw an error. For example
 ```scala
 nestedDf.coalesce(1).write
